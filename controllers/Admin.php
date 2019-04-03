@@ -61,9 +61,21 @@ class Admin extends CI_Controller {
 	function inventaris_admin(){
 		 $this->load->view('inventaris_admin');
 	}
+	function inventaris_detail(){
+		 $this->load->view('inventaris-detail_admin');
+	}
+	function inventaris_semua(){
+		 $this->load->view('inventaris-semua_admin');
+	}
 
 	function barang_eksternal_admin(){
 		 $this->load->view('barang-eksternal_admin');
+	}
+	function eksternal_semua(){
+		 $this->load->view('eksternal-semua_admin');
+	}
+	function eksternal_detail(){
+		 $this->load->view('eksternal-detail_admin');
 	}
 
 	function pengadaan_admin(){
