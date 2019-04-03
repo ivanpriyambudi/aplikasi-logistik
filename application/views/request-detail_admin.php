@@ -3,7 +3,7 @@
 <head>
 
     <!-- Title -->
-    <title>Pemberitahuan</title>
+    <title>Detail Request</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets'); ?>/plugins/materialize/css/materialize.min.css"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="<?php echo base_url('assets'); ?>/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets'); ?>/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
 
 
     <!-- Theme Styles -->
@@ -30,7 +30,7 @@
     <![endif]-->
 
 </head>
-<body>
+<body class="white">
     <div class="loader-bg"></div>
     <div class="loader">
         <div class="preloader-wrapper big active">
@@ -72,9 +72,9 @@
             </div>
         </div>
     </div>
-    <div class="mn-content fixed-sidebar">
+    <div class="mn-content">
         <header class="mn-header navbar-fixed">
-            <nav class="cyan darken-1">
+            <nav class="cyan darken-1 bs-n">
                 <div class="nav-wrapper row">
                     <section class="material-design-hamburger navigation-toggle">
                         <a href="#" data-activates="slide-out" class="button-collapse show-on-large material-design-hamburger__icon">
@@ -165,23 +165,26 @@
                 </div>
             </nav>
         </header>
-        <aside id="slide-out" class="side-nav white fixed">
+        <aside id="slide-out" class="side-nav white">
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
-                            <p>DASPRO</p>
-                            <span>username<i class="material-icons right">arrow_drop_down</i></span>
+                            <p>EAD</p>
+                            <span>ead@gmail.com<i class="material-icons right">arrow_drop_down</i></span>
                         </a>
                     </div>
                 </div>
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('pemberitahuan_user'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">mail_outline</i>Data Pinjam</a>
+                        </li>
+                        <li class="no-padding">
+                            <a class="waves-effect waves-grey"><i class="material-icons">done</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
@@ -190,92 +193,181 @@
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard_admin"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_data'); ?>"><i class="material-icons">dvr</i>Data Peminjaman</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey active" href="<?php echo base_url(); ?>dasboard_admmin"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding">
+                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Data Barang<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="<?php echo base_url('admin/inventaris_admin'); ?>">Inventaris</a></li>
+                                <li><a href="<?php echo base_url('admin/barang_eksternal_admin'); ?>">Barang Eksternal</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="no-padding">
+                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">cloud_download</i>Pengadaan<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="<?php echo base_url('admin/pengadaan_admin'); ?>">Pengadaan Barang Baru</a></li>
+                                <li><a href="<?php echo base_url('admin/pengadaan_barang_data_admin'); ?>">Data Pengadaan Barang</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="no-padding active">
+                        <a href="<?php echo base_url('admin/request_admin'); ?>" class="waves-effect waves-grey active"><i class="material-icons" class="active-page">cloud_upload</i>Request</a>
+                    </li>
                 </ul>
             </div>
         </aside>
-        <main class="mn-inner">
-          <div class="row">
-            <div class="col s12 m12 l8">
-                <div class="card white darken-1">
-                    <div class="card-content" style="padding-bottom: 0px;">
-                        <span class="card-title">Senin, 15 April 2019, 10:30 WIB</span>
-                        <div class="row">
-                            <div class="col s12 m8">
-                                <span class="card-title">Konfirmasi Permohonan Peminjaman</span>
-                                <p>Permohonan Peminjaman anda dengan ID 123 atas nama Joni <b class="light-green-text accent-4">DITERIMA</b>, silahkan lakukan pengecekan</p>  
-                            </div>
-                            <div class="col s12 m4">
-                                <i class="material-icons light-green-text accent-4" style="text-align: center; font-size: 90px;">check_circle</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Detail</a>
-                    </div>
-                </div>
-                <div class="card white darken-1">
-                    <div class="card-content" style="padding-bottom: 0px;">
-                        <span class="card-title">Senin, 15 April 2019, 10:30 WIB</span>
-                        <div class="row">
-                            <div class="col s12 m8">
-                                <span class="card-title">Konfirmasi Permohonan Peminjaman</span>
-                                <p>Permohonan Peminjaman anda dengan ID 123 atas nama Joni <b class="red-text darken-1">DITOLAK</b>, silahkan lakukan pengecekan</p>  
-                            </div>
-                            <div class="col s12 m4">
-                                <i class="material-icons red-text darken-1" style="text-align: center; font-size: 90px;">cancel</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Filter Pencarian</span>
-                        <div class="row">
-                            <div class="col s12">
-                                <label for="birthdate">Tanggal Masuk</label>
-                                <input id="birthdate" type="text" class="datepicker">
-                            </div>
-                            <div class="col s12">
-                                <label>Status Permohonan</label>
-                                <select>
-                                    <option value="" disabled selected>Status</option>
-                                    <option value="1">Diterima</option>
-                                    <option value="2">Ditolak</option>
-                                </select>
-                            </div>
-                            <div class="col s12">
-                                <label for="Nama">Nama</label>
-                                <input placeholder="Nama Peminjam" id="Nama" type="text" class="validate">
-                            </div>
-                            <div class="col s12 center">
-                                <a class="waves-effect waves-light btn">SUbmit</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-<div class="page-footer">
-    <div class="footer-grid container">
-        <div class="footer-l white">&nbsp;</div>
-        <div class="footer-grid-l white">
+        <main class="mn-inner no-p">
 
+            <div class="cyan darken-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <div class="card card-transparent no-m">
+                                <div class="card-content  white-text">
+                                    <div class="row">
+                                        <div class="col s12 m6 l6">
+                                            <h4>Request Barang</h4>
+                                            <address>
+                                                Pemohon : Lab
+                                            </address>
+                                            <address>
+                                                ID : Lab
+                                            </address>
+                                        </div>
+                                        <div class="col s12 m6 l6 right-align">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l8">
+                     <div class="card card-transparent">
+                        <div class="card-content">
+                            <h5>Data Barang</h5>
+                            <br>
+                            <table class="bordered">
+                                <thead>
+                                    <tr>
+                                        <th data-field="id">Nama Barang</th>
+                                        <th data-field="name">Jumlah Request</th>
+                                        <th data-field="price">Jumlah Stok</th>
+                                        <th data-field="price">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Alvin</td>
+                                        <td>Eclair</td>
+                                        <td>$0.87</td>
+                                        <td>$0.87</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alan</td>
+                                        <td>Jellybean</td>
+                                        <td>$3.76</td>
+                                        <td>$0.87</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jonathan</td>
+                                        <td>Lollipop</td>
+                                        <td>$7.00</td>
+                                        <td>$0.87</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shannon</td>
+                                        <td>KitKat</td>
+                                        <td>$9.99</td>
+                                        <td>$0.87</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 l4">
+
+                    <div class="card card-transparent">
+                        <div class="card-content">
+                            <h5>Data Barang</h5>
+                            <br>
+                            <ul class="collection">
+                                <li class="collection-item">Nama Pemohon : </li>
+                                <li class="collection-item">Tanggal Input Request : </li>
+                                <li class="collection-item">Tanggal Digunakan : </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+                        <li class="">
+                            <div class="collapsible-header"><i class="material-icons">check</i>Terima Request</div>
+                            <div class="collapsible-body" style="display: none;">
+                                <p style="padding-bottom: 1rem;">Jika anda yakin untuk menerima permohonan request ini, maka silahkan klik link di bawah ini!</p>
+
+                                <div class="center">
+                                    <a class="waves-effect waves-teal btn-flat">Terima</a>
+                                </div>
+                                <br>
+                                <br>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+                        <li class="">
+                            <div class="collapsible-header"><i class="material-icons">clear</i>Tolak Request</div>
+                            <div class="collapsible-body" style="display: none;">
+                                <p style="padding-bottom: 1rem;">Berikan keterangan untuk penolakan request</p>
+                                <div class="card card-transparent">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <form class="col s12">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+                                                        <label for="textarea1">Isi Keterangan Penolakan Request</label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="center">
+                                    <a class="waves-effect waves-teal btn-flat">Tolak</a>
+                                </div>
+                                <br>
+                                <br>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
         </div>
-        <div class="footer-r white">&nbsp;</div>
-        <div class="footer-grid-r white">
+    </main>
+    <div class="page-footer">
+        <div class="footer-grid container">
+            <div class="footer-l white">&nbsp;</div>
+            <div class="footer-grid-l white">
+                <a class="footer-text" href="<?php echo base_url('admin/request_admin'); ?>">
+                    <i class="material-icons arrow-l">arrow_back</i>
+                    <span class="direction">Kembali</span>
+                    <div>
+                        Data Request
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <div class="left-sidebar-hover"></div>
 
@@ -285,7 +377,7 @@
 <script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/plugins/jquery-blockui/jquery.blockui.js"></script>
 <script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/js/pages/form_elements.js"></script>
+<script src="<?php echo base_url('assets'); ?>/js/pages/ui-modals.js"></script>
 
 </body>
 </html>

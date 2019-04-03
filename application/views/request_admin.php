@@ -3,7 +3,7 @@
 <head>
 
     <!-- Title -->
-    <title>Pemberitahuan</title>
+    <title>Request Masuk</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta charset="UTF-8">
@@ -15,6 +15,7 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets'); ?>/plugins/materialize/css/materialize.min.css"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="<?php echo base_url('assets'); ?>/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets'); ?>/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
 
     <!-- Theme Styles -->
@@ -173,15 +174,18 @@
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
-                            <p>DASPRO</p>
-                            <span>username<i class="material-icons right">arrow_drop_down</i></span>
+                            <p>EAD</p>
+                            <span>ead@gmail.com<i class="material-icons right">arrow_drop_down</i></span>
                         </a>
                     </div>
                 </div>
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('pemberitahuan_user'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">mail_outline</i>Data User</a>
+                        </li>
+                        <li class="no-padding">
+                            <a class="waves-effect waves-grey"><i class="material-icons">done</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
@@ -190,102 +194,166 @@
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard_admin"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_data'); ?>"><i class="material-icons">dvr</i>Data Peminjaman</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey active" href="<?php echo base_url(); ?>dasboard_admin"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding">
+                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Data Barang<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="<?php echo base_url('admin/inventaris_admin'); ?>">Inventaris</a></li>
+                                <li><a href="<?php echo base_url('admin/barang_eksternal_admin'); ?>">Barang Eksternal</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="no-padding">
+                        <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">cloud_download</i>Pengadaan<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="<?php echo base_url('admin/pengadaan_admin'); ?>">Pengadaan Barang Baru</a></li>
+                                <li><a href="<?php echo base_url('admin/pengadaan_barang_data_admin'); ?>">Data Pengadaan Barang</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="no-padding active">
+                        <a href="<?php echo base_url('admin/request_admin'); ?>" class="waves-effect waves-grey active"><i class="material-icons" class="active-page">cloud_upload</i>Request</a>
+                    </li>
                 </ul>
             </div>
         </aside>
         <main class="mn-inner">
-          <div class="row">
-            <div class="col s12 m12 l8">
-                <div class="card white darken-1">
-                    <div class="card-content" style="padding-bottom: 0px;">
-                        <span class="card-title">Senin, 15 April 2019, 10:30 WIB</span>
-                        <div class="row">
-                            <div class="col s12 m8">
-                                <span class="card-title">Konfirmasi Permohonan Peminjaman</span>
-                                <p>Permohonan Peminjaman anda dengan ID 123 atas nama Joni <b class="light-green-text accent-4">DITERIMA</b>, silahkan lakukan pengecekan</p>  
-                            </div>
-                            <div class="col s12 m4">
-                                <i class="material-icons light-green-text accent-4" style="text-align: center; font-size: 90px;">check_circle</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Detail</a>
-                    </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="page-title">Request Barang Masuk</div>
                 </div>
-                <div class="card white darken-1">
-                    <div class="card-content" style="padding-bottom: 0px;">
-                        <span class="card-title">Senin, 15 April 2019, 10:30 WIB</span>
-                        <div class="row">
-                            <div class="col s12 m8">
-                                <span class="card-title">Konfirmasi Permohonan Peminjaman</span>
-                                <p>Permohonan Peminjaman anda dengan ID 123 atas nama Joni <b class="red-text darken-1">DITOLAK</b>, silahkan lakukan pengecekan</p>  
-                            </div>
-                            <div class="col s12 m4">
-                                <i class="material-icons red-text darken-1" style="text-align: center; font-size: 90px;">cancel</i>
-                            </div>
+
+                <div class="col s12 m12 l12">
+                    <div class="card">
+                        <div class="card-content">
+                            <table id="example" class="display responsive-table datatable-example">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Pemohon</th>
+                                        <th>Tgl Masuk</th>
+                                        <th>Tgl Dibutuhkan</th>
+                                        <th>Status Barang</th>
+                                        <th>Status Peminjaman</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Pemohon</th>
+                                        <th>Tgl Masuk</th>
+                                        <th>Tgl Dibutuhkan</th>
+                                        <th>Status Barang</th>
+                                        <th>Status Peminjaman</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>
+                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>
+                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>
+                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>
+                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>
+                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>Edinburgh</td>
+                                        <td>
+                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">Detail</a>
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Filter Pencarian</span>
-                        <div class="row">
-                            <div class="col s12">
-                                <label for="birthdate">Tanggal Masuk</label>
-                                <input id="birthdate" type="text" class="datepicker">
-                            </div>
-                            <div class="col s12">
-                                <label>Status Permohonan</label>
-                                <select>
-                                    <option value="" disabled selected>Status</option>
-                                    <option value="1">Diterima</option>
-                                    <option value="2">Ditolak</option>
-                                </select>
-                            </div>
-                            <div class="col s12">
-                                <label for="Nama">Nama</label>
-                                <input placeholder="Nama Peminjam" id="Nama" type="text" class="validate">
-                            </div>
-                            <div class="col s12 center">
-                                <a class="waves-effect waves-light btn">SUbmit</a>
-                            </div>
-                        </div>
-                    </div>
+        </main>
+        <div class="page-footer">
+            <div class="footer-grid container">
+                <div class="footer-l white">&nbsp;</div>
+                <div class="footer-grid-l white">
+
+                </div>
+                <div class="footer-r white">&nbsp;</div>
+                <div class="footer-grid-r white">
+                    
                 </div>
             </div>
         </div>
     </div>
-</main>
-<div class="page-footer">
-    <div class="footer-grid container">
-        <div class="footer-l white">&nbsp;</div>
-        <div class="footer-grid-l white">
+    <div class="left-sidebar-hover"></div>
 
-        </div>
-        <div class="footer-r white">&nbsp;</div>
-        <div class="footer-grid-r white">
-        </div>
-    </div>
-</div>
-</div>
-<div class="left-sidebar-hover"></div>
+    <!-- Javascripts -->
 
-<!-- Javascripts -->
-<script src="<?php echo base_url('assets'); ?>/plugins/jquery/jquery-2.2.0.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/plugins/materialize/js/materialize.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/plugins/jquery-blockui/jquery.blockui.js"></script>
-<script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/js/pages/form_elements.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/jquery/jquery-2.2.0.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/materialize/js/materialize.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/jquery-blockui/jquery.blockui.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/js/pages/table-data.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/datatables/js/jquery.dataTables.min.js"></script>  
+    <script src="<?php echo base_url('assets'); ?>/plugins/jquery-validation/jquery.validate.min.js"></script>  
+    <script src="<?php echo base_url('assets'); ?>/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/js/pages/form-wizard.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/js/pages/ui-modals.js"></script>
 
 </body>
 </html>
