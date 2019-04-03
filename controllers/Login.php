@@ -67,6 +67,10 @@ class Login extends CI_Controller {
    function pemberitahuan(){
 	   $this->load->view('pemberitahuan_user');
    }
+    function detail_barang(){
+	   $this->load->view('detail-barang_user');
+   }
+
 
 
 }
