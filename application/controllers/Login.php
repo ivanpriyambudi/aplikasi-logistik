@@ -120,27 +120,48 @@ class Login extends CI_Controller {
 		$this->load->view('detail-barang_user',$data);
 	}
 
-	function detail_peminjaman(){
-		$this->load->view('detail-peminjaman_user');
+	function detail_peminjaman($id, $name){
+		$data['ss']=$this->Peminjaman->tampil_keranjang_data();
+		$data['detailuser']=$this->Peminjaman->get_nama_keranjang($id);
+		$data['barang']=$this->Peminjaman->get_barang_by_name($name);
+
+		$this->load->view('detail-peminjaman_user',$data);
 	}
 
 	function detail_peminjaman2($id, $name){
+		$data['ss']=$this->Peminjaman->tampil_keranjang_data();
 		$data['detailuser']=$this->Peminjaman->get_nama_keranjang($id);
 		$data['barang']=$this->Peminjaman->get_barang_by_name($name);
+
 		$this->load->view('detail-peminjaman2_user',$data);
 	}
 
 	function edit_jumlah_barang(){
+
 		$nama=$this->input->post('nambar');
 		$jumlah=$this->input->post('quantity');
+		$id_keranjang=$this->input->post('id_keranjang');
+		$tgl_dibutuhkan=$this->input->post('tgl_dibutuhkan');
+
+
+		$this->Peminjaman->edit_tanggal($tgl_dibutuhkan,$id_keranjang);
+		$this->Peminjaman->update($id_keranjang);
 		$q = $this->Peminjaman->edit_jumlah($nama, $jumlah);
-		print_r($nama);
-		print_r($jumlah);
-		if ($q) {
-			echo "string";
-		}else {
-			echo "sad";
-		}
+
+		redirect(base_url('login/peminjaman_barang_user'));
+
 	}
+
+	function hapus_peminjaman(){
+		$id_keranjang=$this->input->post('id_keranjang');
+
+		$this->Peminjaman->hapus_keranjang($id_keranjang);
+		redirect(base_url('login/peminjaman_data_user'));
+	}
+
+	// function update(){
+	// 	$id_keranjang=$this->input('id_keranjang');
+	// 	$this->Peminjaman->update($id_keranjang);
+	// }
 
 }

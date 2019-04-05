@@ -10,6 +10,7 @@ class Inventaris extends CI_Model{
 		return $this->db->get('barang_inventaris')->result();
 	}
 
+
 	function detail_barang_user($id_barang){
 		$this->db->where('id_barang',$id_barang);
 		$query=$this->db->get('barang_inventaris');

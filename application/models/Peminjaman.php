@@ -30,4 +30,24 @@ class Peminjaman extends CI_Model{
 		$this->db->query("UPDATE `peminjaman_barang` SET `jumlah_barang` = '$jumlah' WHERE `nama_barang`='$name'");
 	}
 
+	function update($id_keranjang){
+		return $this->db->query("UPDATE `keranjang_peminjaman` SET `status`='pending' WHERE `id_keranjang`='$id_keranjang'");
+	}
+
+	function update_terima($id_keranjang){
+		return $this->db->query("UPDATE `keranjang_peminjaman` SET `status`='terima' WHERE `id_keranjang`='$id_keranjang'");
+	}
+
+	function update_tolak($id_keranjang){
+		return $this->db->query("UPDATE `keranjang_peminjaman` SET `status`='tolak' WHERE `id_keranjang`='$id_keranjang'");
+	}
+
+	function edit_tanggal($tgl_dibutuhkan,$id_keranjang){
+		return $this->db->query("UPDATE `keranjang_peminjaman` SET `tgl_dibutuhkan`='$tgl_dibutuhkan' WHERE `id_keranjang`='$id_keranjang'");
+	}
+
+	function hapus_keranjang($id_keranjang){
+		return $this->db->query("DELETE FROM `keranjang_peminjaman` WHERE id_keranjang='$id_keranjang'");
+	}
+
 }

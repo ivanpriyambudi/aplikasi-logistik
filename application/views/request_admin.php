@@ -231,78 +231,38 @@
                             <table id="example" class="display responsive-table datatable-example">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
+                                        <th>ID</th>
+                                        <th>Nama Keranjang</th>
+                                        <th>Nama Peminjam</th>
                                         <th>Tanggal Input</th>
-                                        <th>Jumlah Macam</th>
                                         <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Id Pengadaan</th>
+                                        <th>ID</th>
+                                        <th>Nama Keranjang</th>
+                                        <th>Nama Peminjam</th>
                                         <th>Tanggal Input</th>
-                                        <th>Jumlah Macam</th>
                                         <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-
+                                    <?php foreach ($tampilkeranjangdata as $c) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $c->id_keranjang; ?></td>
+                                            <td><?php echo $c->nama_keranjang; ?></td>
+                                            <td><?php echo $c->nama_peminjam; ?></td>
+                                            <td><?php echo $c->tgl_pembuatan; ?></td>
+                                            <td><?php echo $c->status; ?></td>
+                                            <td>
+                                                <a href="<?php echo base_url('admin/request_detail_admin/'.$c->id_keranjang.'/'.$c->nama_keranjang); ?>">Detail</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>

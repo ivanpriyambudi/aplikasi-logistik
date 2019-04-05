@@ -7,6 +7,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Admin_login');
 		$this->load->model('Inventaris');
 		$this->load->model('Eksternal');
+		$this->load->model('Peminjaman');
 		$this->load->helper('url');
 
 	}
@@ -83,7 +84,33 @@ class Admin extends CI_Controller {
 	}
 
 	function request_admin(){
-		$this->load->view('request_admin');
+		$data['tampilkeranjangdata'] = $this->Peminjaman->tampil_keranjang_data();
+
+		$this->load->view('request_admin',$data);
+	}
+
+	function request_detail_admin($id, $name){
+		$data['ss']=$this->Peminjaman->tampil_keranjang_data();
+		$data['detailuser']=$this->Peminjaman->get_nama_keranjang($id);
+		$data['barang']=$this->Peminjaman->get_barang_by_name($name);
+
+
+
+		$this->load->view('request-detail_admin',$data);
+	}
+
+	function konfirmasi_peminjaman($id_keranjang){
+		// $id_keranjang=$this->input->post('id_keranjang');
+		$this->Peminjaman->update_terima($id_keranjang);
+
+		redirect(base_url('admin/request_admin'));
+	}
+
+	function tolak_peminjaman($id_keranjang){
+		// $id_keranjang=$this->input->post('id_keranjang');
+		$this->Peminjaman->update_tolak($id_keranjang);
+		
+		redirect(base_url('admin/request_admin'));
 	}
 
 

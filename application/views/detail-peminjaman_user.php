@@ -223,20 +223,30 @@
             </div>
 
             <div class="container">
-                <div class="card-panel green darken-13">
-                    <div><h5 class="white-text">Status Peminjaman : Diterima</h5></div>
-                    <p class="white-text">Tunjukkan ID Peminjaman kepada Admin Logistik EAD saat pengambilan barang.</p>
-                </div>
-                <br>
-                <div class="card-panel red darken-13">
-                    <div><h5 class="white-text">Status Peminjaman : Ditolak</h5></div>
-                    <p class="white-text">Alasan : </p>
-                </div>
-                <br>
-                <div class="card-panel orange darken-1">
-                    <div><h5 class="white-text">Status Peminjaman : Pending</h5></div>
-                    <p class="white-text">Tunggu konfirmasi dari Admin.</p>
-                </div>
+
+                <?php foreach ($detailuser as $c) {
+
+                    if ($c->status=="pending") {
+                        echo '<div class="card-panel orange darken-1">
+                        <div><h5 class="white-text">Status Peminjaman : Pending</h5></div>
+                        <p class="white-text">Tunggu konfirmasi dari Admin.</p>
+                        </div>';
+                    }else if ($c->status=="terima") {
+                        echo '<div class="card-panel green darken-13">
+                        <div><h5 class="white-text">Status Peminjaman : Diterima</h5></div>
+                        <p class="white-text">Tunjukkan ID Peminjaman kepada Admin Logistik EAD saat pengambilan barang.</p>
+                        </div> <br>';
+                    }else{
+                        echo '<div class="card-panel red darken-13">
+                        <div><h5 class="white-text">Status Peminjaman : Ditolak</h5></div>
+                        <p class="white-text">Alasan : </p>
+                        </div>
+                        <br>';
+                        echo $c->status;
+                    }
+
+                } ?>
+
                 <div class="divider"></div>
                 <div class="row">
                     <div class="col s12 m12 l8">
@@ -252,22 +262,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Alan</td>
-                                        <td>Jellybean</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shannon</td>
-                                        <td>KitKat</td>
-                                    </tr>
+                                    <?php foreach ($barang as $c) { ?>
+                                        <tr>
+                                            <td><?php echo $c->nama_barang?></td>
+                                            <td><?php echo $c->jumlah_barang?></td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
 
@@ -280,42 +280,40 @@
                         <div class="card-content">
                             <h5>Data Peminjaman</h5>
                             <br>
-                            <ul class="collection">
-                                <li class="collection-item">Nama Pemohon : </li>
-                                <li class="collection-item">Tanggal Input Request : </li>
-                                <li class="collection-item">Tanggal Digunakan : </li>
-                            </ul>
-
+                            <?php foreach ($detailuser as $c) { ?>
+                                <ul class="collection">
+                                    <li class="collection-item">Nama Pemohon : <br> <?php echo $c->nama_peminjam ?></li>
+                                    <li class="collection-item">Tanggal Input Request : <br> <?php echo $c->tgl_pembuatan ?></li>
+                                    <li class="collection-item">Tanggal Digunakan : <br> <?php echo $c->tgl_dibutuhkan ?></li>
+                                </ul>
+                            <?php } ?>
                         </div>
                     </div>
-
                     <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
-                        <li class="">
-                            <div class="collapsible-header"><i class="material-icons">send</i>Kirim Permintaan</div>
-                            <div class="collapsible-body" style="display: none;">
-                                <p style="padding-bottom: 1rem;">Jika anda yakin untuk mengirim permintaan peminjaman ini, maka silahkan klik link di bawah ini!</p>
 
-                                <div class="center">
-                                    <a class="waves-effect waves-teal btn-flat">Kirim</a>
-                                </div>
-                                <br>
-                                <br>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
-                        <li class="">
-                            <div class="collapsible-header"><i class="material-icons">delete</i>Hapus Permintaan</div>
-                            <div class="collapsible-body" style="display: none;">
-                                <p style="padding-bottom: 1rem;">Jika anda yakin untuk menghapus permintaan peminjaman ini, maka silahkan klik link di bawah ini!</p>
+                        <?php foreach ($detailuser as $c) { ?>
 
-                                <div class="center">
-                                    <a class="waves-effect waves-teal btn-flat">Hapus</a>
+                            <li class="">
+                                <div class="collapsible-header"><i class="material-icons">delete</i>Hapus Permintaan</div>
+                                <div class="collapsible-body" style="display: none;">
+                                    <p style="padding-bottom: 1rem;">Jika anda yakin untuk menghapus permintaan peminjaman ini, maka silahkan klik link di bawah ini!</p>
+
+                                    <form class="col s12" method="post" action="<?php echo base_url('login/hapus_peminjaman'); ?>">
+
+                                        <div class="center">
+                                            <input id="id_keranjang" name="id_keranjang" type="text" class="required validate" value="<?php echo $c->id_keranjang; ?>" hidden>
+                                            <button type="sumbit" class="waves-effect waves-teal btn-flat">Hapus</button>
+                                        </div>
+
+                                    </form>
+
+                                    <br>
+                                    <br>
                                 </div>
-                                <br>
-                                <br>
-                            </div>
-                        </li>
+                            </li>
+
+                        <?php }?>
+
                     </ul>
 
                 </div>

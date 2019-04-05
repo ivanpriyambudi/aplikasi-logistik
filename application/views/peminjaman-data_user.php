@@ -236,7 +236,23 @@
                                             <td><?php echo $c->nama_peminjam; ?></td>
                                             <td><?php echo $c->tgl_pembuatan; ?></td>
                                             <td><?php echo $c->status; ?></td>
-                                            <td><a href="<?php echo base_url('login/detail_peminjaman2/'.$c->id_keranjang.'/'.$c->nama_keranjang); ?>" class="waves-effect waves-blue btn-flat">Detail</a></td>
+                                            <td>
+
+                                                <?php 
+                                                    
+                                                    if ($c->status=="pending") {
+                                                        echo '<a href="'.base_url('login/detail_peminjaman/'.$c->id_keranjang.'/'.$c->nama_keranjang).'" class="waves-effect waves-blue btn-flat">Detail</a>';
+                                                    }else if ($c->status=="terima") {
+                                                        echo '<a href="'.base_url('login/detail_peminjaman/'.$c->id_keranjang.'/'.$c->nama_keranjang).'" class="waves-effect waves-blue btn-flat">Detail</a>';
+                                                    }else if ($c->status=="tolak") {
+                                                        echo '<a href="'.base_url('login/detail_peminjaman/'.$c->id_keranjang.'/'.$c->nama_keranjang).'" class="waves-effect waves-blue btn-flat">Detail</a>';
+                                                    }else{
+                                                        echo '<a href="'.base_url('login/detail_peminjaman2/'.$c->id_keranjang.'/'.$c->nama_keranjang).'" class="waves-effect waves-blue btn-flat">Detail</a>';
+                                                    }
+
+                                                ?>
+
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

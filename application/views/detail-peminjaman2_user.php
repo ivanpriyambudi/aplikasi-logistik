@@ -238,96 +238,113 @@
                                 </thead>
                                 <tbody>
                                     <form method="post" action="<?php echo base_url('login/edit_jumlah_barang'); ?>">
-                                    <?php foreach ($barang as $b) {?>
-                                    <tr>
-                                        <td><?php echo $b->nama_barang; ?></td>
-                                        <td><div class="input-field col m12 s12">
-                                            <label for="quantity">Jumlah</label>
-                                            <input id="quantity" name="quantity" type="number" class="required validate">
-                                            <input type="hidden" name="nambar" value="<?php echo $b->nama_barang; ?>">
-                                        </div></td>
-                                    </tr>
-                                    <?php $nama_barang = $b->nama_barang; ?>
-                                    <?php } ?>
-                                    <button class="waves-effect waves-teal btn-flat" type="submit" href="<?php echo base_url('login/edit_jumlah_barang'); ?>">Kirim</button>
-                                    </form>
-                                </tbody>
-                            </table>
+                                        <?php foreach ($barang as $b) {?>
+                                            <tr>
+                                                <td><?php echo $b->nama_barang; ?></td>
+                                                <td><div class="input-field col m12 s12">
+                                                    <label for="quantity">Jumlah</label>
+                                                    <input id="quantity" name="quantity" type="number" class="required validate">
+                                                    <input type="hidden" name="nambar" value="<?php echo $b->nama_barang; ?>">
 
-                        </div>
+                                                </div></td>
+                                            </tr>
+                                            <?php $nama_barang = $b->nama_barang; ?>
+                                        <?php } ?>
+                                        <?php 
+                                        foreach ($ss as $t) {
+                                         echo '<input type="hidden" name="id_keranjang" value="'.$t->id_keranjang.'">';
+                                     }
+                                     ?>
+                                     <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+                                        <li class="">
+                                            <div class="collapsible-header"><i class="material-icons">send</i>Kirim Permintaan</div>
+                                            <div class="collapsible-body" style="display: none;">
+                                                <p style="padding-bottom: 1rem;">Jika anda yakin untuk mengirim permintaan peminjaman ini, maka silahkan klik link di bawah ini!</p>
+
+                                                <div class="center">
+                                                    <button class="waves-effect waves-teal btn-flat" type="submit" href="<?php echo base_url('login/edit_jumlah_barang'); ?>">Kirim</button>
+
+                                                </div>
+                                                <br>
+                                                <br>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+
+                                            <br>
+                                            <?php foreach ($detailuser as $d) {?>
+                                                <ul class="collection">
+                                                    <li class="collection-item">Tanggal Digunakan : <?php echo $d->tgl_dibutuhkan; ?><div class="col s12">
+                                                        <label for="birthdate">Inputkan Tanggal</label>
+                                                        <input id="tgl_dibutuhkan" name="tgl_dibutuhkan" type="text" class="datepicker">
+                                                    </div></li>
+                                                </ul>
+                                                <?php $idKeranjang = $d->id_keranjang; ?>
+                                            <?php }?>
+
+
+
+                                </form>
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
-                <div class="col s12 m12 l4">
-                    
-                    <div class="card card-transparent">
-                        <div class="card-content">
-                            <h5>Data Peminjaman</h5>
-                            <br>
-                            <?php foreach ($detailuser as $d) {?>
+            </div>
+            <div class="col s12 m12 l4">
+
+                <div class="card card-transparent">
+                    <div class="card-content">
+                        <h5>Data Peminjaman</h5>
+                        <br>
+                        <?php foreach ($detailuser as $d) {?>
                             <ul class="collection">
                                 <li class="collection-item">Nama Pemohon : <?php echo $d->nama_peminjam; ?></li>
                                 <li class="collection-item">Tanggal Input Request : <?php echo $d->tgl_pembuatan; ?></li>
-                                <li class="collection-item">Tanggal Digunakan : <?php echo $d->tgl_dibutuhkan; ?><div class="col s12">
-                                    <label for="birthdate">Inputkan Tanggal</label>
-                                    <input id="birthdate" type="text" class="datepicker">
-                                </div></li>
                             </ul>
                             <?php $idKeranjang = $d->id_keranjang; ?>
-                            <?php }?>
-                        </div>
+                        <?php }?>
                     </div>
-                    <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
-                        <li class="">
-                            <div class="collapsible-header"><i class="material-icons">send</i>Kirim Permintaan</div>
-                            <div class="collapsible-body" style="display: none;">
-                                <p style="padding-bottom: 1rem;">Jika anda yakin untuk mengirim permintaan peminjaman ini, maka silahkan klik link di bawah ini!</p>
-
-                                <div class="center">
-                                    
-                                    
-                                </div>
-                                <br>
-                                <br>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
-                        <li class="">
-                            <div class="collapsible-header"><i class="material-icons">delete</i>Hapus Permintaan</div>
-                            <div class="collapsible-body" style="display: none;">
-                                <p style="padding-bottom: 1rem;">Jika anda yakin untuk menghapus permintaan peminjaman ini, maka silahkan klik link di bawah ini!</p>
-
-                                <div class="center">
-                                    <a class="waves-effect waves-teal btn-flat">Hapus</a>
-                                </div>
-                                <br>
-                                <br>
-                            </div>
-                        </li>
-                    </ul>
-
                 </div>
+
+                <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
+                    <li class="">
+                        <div class="collapsible-header"><i class="material-icons">delete</i>Hapus Permintaan</div>
+                        <div class="collapsible-body" style="display: none;">
+                            <p style="padding-bottom: 1rem;">Jika anda yakin untuk menghapus permintaan peminjaman ini, maka silahkan klik link di bawah ini!</p>
+
+                            <div class="center">
+                                <a class="waves-effect waves-teal btn-flat">Hapus</a>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                    </li>
+                </ul>
+
             </div>
-            
-
-            
-
         </div>
-    </main>
-    <div class="page-footer">
-        <div class="footer-grid container">
-            <div class="footer-l white">&nbsp;</div>
-            <div class="footer-grid-l white">
-                <a class="footer-text" href="<?php echo base_url('login/peminjaman_barang_user'); ?>">
-                    <i class="material-icons arrow-l">arrow_back</i>
-                    <span class="direction">Kembali</span>
-                    <div>
-                        Data Peminjaman
-                    </div>
-                </a>
-            </div>
+
+
+
+
+    </div>
+</main>
+<div class="page-footer">
+    <div class="footer-grid container">
+        <div class="footer-l white">&nbsp;</div>
+        <div class="footer-grid-l white">
+            <a class="footer-text" href="<?php echo base_url('login/peminjaman_barang_user'); ?>">
+                <i class="material-icons arrow-l">arrow_back</i>
+                <span class="direction">Kembali</span>
+                <div>
+                    Data Peminjaman
+                </div>
+            </a>
         </div>
     </div>
+</div>
 </div>
 <div class="left-sidebar-hover"></div>
 

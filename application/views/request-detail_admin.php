@@ -229,9 +229,13 @@
                                     <div class="row">
                                         <div class="col s12 m6 l6">
                                             <h4>Request Barang</h4>
-                                            <address>
-                                                Pemohon : Lab
-                                            </address>
+
+                                            <?php foreach ($detailuser as $c) { ?>
+
+                                                <address>
+                                                    Pemohon : <?php echo $c->nama_peminjam; ?>
+                                                </address>
+                                            <?php } ?>
                                             <address>
                                                 ID : Lab
                                             </address>
@@ -249,44 +253,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12 m12 l8">
-                     <div class="card card-transparent">
+                       <div class="card card-transparent">
                         <div class="card-content">
                             <h5>Data Barang</h5>
                             <br>
                             <table class="bordered">
                                 <thead>
                                     <tr>
-                                        <th data-field="id">Nama Barang</th>
-                                        <th data-field="name">Jumlah Request</th>
-                                        <th data-field="price">Jumlah Stok</th>
-                                        <th data-field="price">Status</th>
+                                        <th>Nama Barang</th>
+                                        <th>Jumlah Request</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td>$0.87</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Alan</td>
-                                        <td>Jellybean</td>
-                                        <td>$3.76</td>
-                                        <td>$0.87</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                        <td>$0.87</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shannon</td>
-                                        <td>KitKat</td>
-                                        <td>$9.99</td>
-                                        <td>$0.87</td>
-                                    </tr>
+
+                                    <?php foreach ($barang as $c) { ?>
+                                        <tr>
+                                            <td><?php echo $c->nama_barang ?></td>
+                                            <td><?php echo $c->jumlah_barang ?></td>
+                                        </tr>
+                                    <?php } ?>
+
                                 </tbody>
                             </table>
 
@@ -299,11 +285,14 @@
                         <div class="card-content">
                             <h5>Data Barang</h5>
                             <br>
-                            <ul class="collection">
-                                <li class="collection-item">Nama Pemohon : </li>
-                                <li class="collection-item">Tanggal Input Request : </li>
-                                <li class="collection-item">Tanggal Digunakan : </li>
-                            </ul>
+
+                            <?php foreach ($detailuser as $c) { ?>
+                                <ul class="collection">
+                                    <li class="collection-item">Nama Pemohon : <?php echo $c->nama_peminjam; ?></li>
+                                    <li class="collection-item">Tanggal Input Request : <?php echo $c->tgl_pembuatan; ?></li>
+                                    <li class="collection-item">Tanggal Digunakan : <?php echo $c->tgl_dibutuhkan; ?></li>
+                                </ul>
+                            <?php } ?>
 
                         </div>
                     </div>
@@ -314,9 +303,12 @@
                             <div class="collapsible-body" style="display: none;">
                                 <p style="padding-bottom: 1rem;">Jika anda yakin untuk menerima permohonan request ini, maka silahkan klik link di bawah ini!</p>
 
-                                <div class="center">
-                                    <a class="waves-effect waves-teal btn-flat">Terima</a>
-                                </div>
+                                <?php foreach ($detailuser as $c) { ?>
+                                    <div class="center">
+                                        <a href="<?php echo base_url('admin/konfirmasi_peminjaman/'.$c->id_keranjang); ?>" class="waves-effect waves-teal btn-flat">Terima</a>
+                                    </div>
+                                <?php } ?>
+
                                 <br>
                                 <br>
                             </div>
@@ -327,23 +319,11 @@
                             <div class="collapsible-header"><i class="material-icons">clear</i>Tolak Request</div>
                             <div class="collapsible-body" style="display: none;">
                                 <p style="padding-bottom: 1rem;">Berikan keterangan untuk penolakan request</p>
-                                <div class="card card-transparent">
-                                    <div class="card-content">
-                                        <div class="row">
-                                            <form class="col s12">
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
-                                                        <label for="textarea1">Isi Keterangan Penolakan Request</label>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php foreach ($detailuser as $c) { ?>
                                 <div class="center">
-                                    <a class="waves-effect waves-teal btn-flat">Tolak</a>
+                                    <a href="<?php echo base_url('admin/tolak_peminjaman/'.$c->id_keranjang); ?>" class="waves-effect waves-teal btn-flat">Tolak</a>
                                 </div>
+                            <?php } ?>
                                 <br>
                                 <br>
                             </div>
@@ -358,7 +338,7 @@
         <div class="footer-grid container">
             <div class="footer-l white">&nbsp;</div>
             <div class="footer-grid-l white">
-                <a class="footer-text" href="request.html">
+                <a class="footer-text" href="<?php echo base_url('admin/request_admin'); ?>">
                     <i class="material-icons arrow-l">arrow_back</i>
                     <span class="direction">Kembali</span>
                     <div>
