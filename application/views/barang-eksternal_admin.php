@@ -359,7 +359,7 @@
             </div>
             <div class="footer-r white">&nbsp;</div>
             <div class="footer-grid-r white">
-                <a class="footer-text" href="eksternal-semua.html">
+                <a class="footer-text" href="<?php echo base_url('admin/eksternal_semua'); ?>">
                     <i class="material-icons arrow-r">arrow_forward</i>
                     <br>
                     <div>

@@ -77,7 +77,9 @@ class Admin extends CI_Controller {
 	function pengadaan_admin(){
 		$this->load->view('pengadaan_admin');
 	}
-
+function eksternal_semua(){
+		$this->load->view('pengadaan_admin');
+	}
 	function pengadaan_barang_data_admin(){
 		$this->load->view('pengadaan-barang-data_admin');
 	}
