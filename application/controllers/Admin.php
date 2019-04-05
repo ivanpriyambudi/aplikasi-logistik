@@ -86,6 +86,10 @@ class Admin extends CI_Controller {
 		$this->load->view('request_admin');
 	}
 
+function pemberitahuan(){
+		$this->load->view('pemberitahuan_user');
+	}
+	
 
 	/*---------------------------------------</LINK>---------------------------------------------------*/
 
