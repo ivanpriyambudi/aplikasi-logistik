@@ -169,7 +169,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="assets/images/profile-image.png" class="circle" alt="">
+                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -181,7 +181,7 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="<?php echo base_url('admin/pemberitahuan'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
@@ -322,7 +322,7 @@
                             </div>
                             <div class="row">
                                 <div class="col s12 m8 l8">
-                                    <img class="materialboxed responsive-img" src="assets/images/card-image.jpg" alt="">
+                                    <img class="materialboxed responsive-img" src="<?php echo base_url('assets'); ?>/images/card-image.jpg" alt="">
 
 
 

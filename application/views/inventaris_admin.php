@@ -345,7 +345,7 @@
             </div>
             <div class="footer-r white">&nbsp;</div>
             <div class="footer-grid-r white">
-                <a class="footer-text" href="inventaris-semua.html">
+                <a class="footer-text" href="<?php echo base_url('admin/inventaris_admin'); ?>">
                     <i class="material-icons arrow-r">arrow_forward</i>
                     <br>
                     <div>
