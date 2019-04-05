@@ -12,14 +12,14 @@
     <meta name="author" content="Steelcoders" />
 
     <!-- Styles -->
-    <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets'); ?>/plugins/materialize/css/materialize.min.css"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
+    <link href="<?php echo base_url('assets'); ?>/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
 
 
     <!-- Theme Styles -->
-    <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url('assets'); ?>/css/alpha.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url('assets'); ?>/css/custom.css" rel="stylesheet" type="text/css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -191,8 +191,8 @@
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
                     <li class="no-padding"><a class="waves-effect waves-grey" href="index.html"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="peminjaman-barang.html"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="peminjaman-data.html"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_data'); ?>"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
                 </ul>
             </div>
         </aside>
@@ -330,7 +330,7 @@
         <div class="footer-grid container">
             <div class="footer-l white">&nbsp;</div>
             <div class="footer-grid-l white">
-                <a class="footer-text" href="peminjaman-data.html">
+                <a class="footer-text" href="<?php echo base_url('login/peminjaman_data'); ?>">
                     <i class="material-icons arrow-l">arrow_back</i>
                     <span class="direction">Kembali</span>
                     <div>
@@ -344,12 +344,12 @@
 <div class="left-sidebar-hover"></div>
 
 <!-- Javascripts -->
-<script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
-<script src="assets/plugins/materialize/js/materialize.min.js"></script>
-<script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
-<script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
-<script src="assets/js/alpha.min.js"></script>
-<script src="assets/js/pages/form_elements.js"></script>
+<script src="<?php echo base_url('assets'); ?>/plugins/jquery/jquery-2.2.0.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/plugins/materialize/js/materialize.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/plugins/jquery-blockui/jquery.blockui.js"></script>
+<script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/js/pages/form_elements.js"></script>
 
 </body>
 </html>
