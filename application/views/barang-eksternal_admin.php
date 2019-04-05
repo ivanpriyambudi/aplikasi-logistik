@@ -230,65 +230,63 @@
                     <div class="modal-content" style="padding-bottom: 0px;">
                         <section>
                             <div class="wizard-content" style="padding: 0px;">
-
-                                <div class="row">
-                                    <div class="col m6">
-                                        <div class="row">
-                                            <div class="input-field col m12 s12">
-                                                <label for="firstName">Nama Barang</label>
-                                                <input id="firstName" name="firstName" type="text" class="required validate">
-                                            </div>
-                                            <div class="input-field col m12 s12">
-                                                <label for="lastName">Kategori</label>
-                                                <input id="lastName" name="lastName" type="text" class="required validate">
-                                            </div>
-                                            <div class="input-field col m12 s12">
-                                                <label for="quantity">Jumlah</label>
-                                                <input id="quantity" name="quantity" type="number" class="required validate">
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="col m6">
-                                        <div class="row">
-                                            <div class="input-field col m12 s12">
-                                                <label for="lastName">Asal Peminjaman</label>
-                                                <input id="lastName" name="lastName" type="text" class="required validate">
-                                            </div>
-                                            <div class="input-field col m12 s12">
-                                                <label for="tanggal-pinjam">Tanggal Peminjaman</label>
-                                                <input id="tanggal-pinjam" name="tanggal-pinjam" type="date" class="datepicker required">
-                                            </div>
-                                            <div class="input-field col m12 s12">
-                                                <label for="tanggal-kembali">Tanggal Pengembalian</label>
-                                                <input id="tanggal-kembali" name="tanggal-kembali" type="date" class="datepicker required">
-                                            </div>
-
-                                            <div class="input-field col s12">
-                                               <form action="#" class="p-v-xs">
-                                                <div class="file-field input-field">
-                                                    <div class="btn teal lighten-1">
-                                                        <span>Upload</span>
-                                                        <input type="file" multiple>
-                                                    </div>
-                                                    <div class="file-path-wrapper">
-                                                        <input class="file-path validate" type="text" placeholder="Upload Gambar Barang">
-                                                    </div>
+                                <form class="col s12" method="post" action="<?php echo base_url('admin/tambah_barang_eksternal'); ?>">
+                                    <div class="row">
+                                        <div class="col m6">
+                                            <div class="row">
+                                                <div class="input-field col m12 s12">
+                                                    <label for="nama_barang">Nama Barang</label>
+                                                    <input id="nama_barang" name="nama_barang" type="text" class="required validate">
                                                 </div>
-                                            </form>
+                                                <div class="input-field col m12 s12">
+                                                    <label for="kategori">Kategori</label>
+                                                    <input id="kategori" name="kategori" type="text" class="required validate">
+                                                </div>
+                                                <div class="input-field col m12 s12">
+                                                    <label for="jumlah">Jumlah</label>
+                                                    <input id="jumlah" name="jumlah" type="number" class="required validate">
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="col m6">
+                                            <div class="row">
+                                                <div class="input-field col m12 s12">
+                                                    <label for="asal_barang">Asal Peminjaman</label>
+                                                    <input id="asal_barang" name="asal_barang" type="text" class="required validate">
+                                                </div>
+                                                <div class="input-field col m12 s12">
+                                                    <label for="tgl_masuk">Tanggal Peminjaman</label>
+                                                    <input id="tgl_masuk" name="tgl_masuk" type="text" class="datepicker">
+                                                </div>
+                                                <div class="input-field col m12 s12">
+                                                    <label for="tgl_pengembalian">Tanggal Pengembalian</label>
+                                                    <input id="tgl_pengembalian" name="tgl_pengembalian" type="text" class="datepicker">
+                                                </div>
+
+                                                <div class="input-field col s12">
+                                                   <form action="#" class="p-v-xs">
+                                                    <div class="file-field input-field">
+                                                        <div class="btn teal lighten-1">
+                                                            <span>Upload</span>
+                                                            <input type="file" multiple>
+                                                        </div>
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Gambar Barang">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col m12 s12 center">
+                                            <button class="waves-effect waves-teal btn-flat" type="submit">Submit</button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col m12 s12 center">
-                                        <a class="waves-effect waves-teal btn-flat">Submit</a>
-                                    </div>
-                                </div>
-
-                            </div>
-
+                            </form>
                         </div>
                     </section>
                 </div>
@@ -309,9 +307,9 @@
                         <table id="example" class="display responsive-table datatable-example">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Nama</th>
                                     <th>Asal Barang</th>
-
                                     <th>Tgl Masuk</th>
                                     <th>Tgl Pengembalian</th>
                                     <th>Status</th>
@@ -320,9 +318,9 @@
                             </thead>
                             <tfoot>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Nama</th>
                                     <th>Asal Barang</th>
-
                                     <th>Tgl Masuk</th>
                                     <th>Tgl Pengembalian</th>
                                     <th>Status</th>
@@ -330,75 +328,24 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>Tiger Nixon</td>
-
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>Tiger Nixon</td>
-
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>Tiger Nixon</td>
-
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>Tiger Nixon</td>
-
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>Tiger Nixon</td>
-
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>Tiger Nixon</td>
-
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-
+                                <?php foreach ($tampilbarang_eks as $g) {
+                                    ?>
+                                    <?php $link=$g->id_barang; ?>
+                                    <tr>
+                                        <td><?php echo $g->id_barang; ?></td>
+                                        <td><?php echo $g->nama_barang; ?></td>
+                                        <td><?php echo $g->asal_barang; ?></td>
+                                        <td><?php echo $g->tgl_masuk; ?></td>
+                                        <td><?php echo $g->tgl_pengembalian; ?></td>
+                                        <td><?php echo $g->status; ?></td>
+                                        <td>
+                                            <a href="<?php echo base_url(); ?>/admin/barang_eksternal_detail_admin/<?php echo str_replace(' ', '-', strtolower($link)); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
+                        
                     </div>
                 </div>
             </div>
@@ -412,7 +359,7 @@
             </div>
             <div class="footer-r white">&nbsp;</div>
             <div class="footer-grid-r white">
-                <a class="footer-text" href="<?php echo base_url('admin/inventaris_detail'); ?>">
+                <a class="footer-text" href="eksternal-semua.html">
                     <i class="material-icons arrow-r">arrow_forward</i>
                     <br>
                     <div>
@@ -427,6 +374,7 @@
 
 <!-- Javascripts -->
 
+</script>
 <script src="<?php echo base_url('assets'); ?>/plugins/jquery/jquery-2.2.0.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/plugins/materialize/js/materialize.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
@@ -434,9 +382,8 @@
 <script src="<?php echo base_url('assets'); ?>/js/pages/table-data.js"></script>
 <script src="<?php echo base_url('assets'); ?>/plugins/datatables/js/jquery.dataTables.min.js"></script>  
 <script src="<?php echo base_url('assets'); ?>/plugins/jquery-validation/jquery.validate.min.js"></script>  
-<script src="<?php echo base_url('assets'); ?>/plugins/jquery-steps/jquery.steps.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/js/pages/form-wizard.js"></script>
+<script src="<?php echo base_url('assets'); ?>/js/pages/form_elements.js"></script>
 <script src="<?php echo base_url('assets'); ?>/js/pages/ui-modals.js"></script>
 
 </body>

@@ -254,7 +254,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -263,7 +263,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -272,7 +272,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -281,7 +281,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -290,7 +290,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -299,7 +299,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/eksternal_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
 

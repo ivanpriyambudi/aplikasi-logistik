@@ -297,8 +297,8 @@
                         <table id="example" class="display responsive-table datatable-example">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Nama</th>
-                                    <th>Kode Barang</th>
                                     <th>Kategori</th>
                                     <th>Jumlah</th>
                                     <th>Status</th>
@@ -307,8 +307,8 @@
                             </thead>
                             <tfoot>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Nama</th>
-                                    <th>Kode Barang</th>
                                     <th>Kategori</th>
                                     <th>Jumlah</th>
                                     <th>Status</th>
@@ -316,67 +316,20 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/inventaris_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/inventaris_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/inventaris_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/inventaris_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/inventaris_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>Edinburgh</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/inventaris_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                    </td>
-                                </tr>
-
+                                <?php foreach ($tampilbarang as $t) {
+                                    ?>
+                                    <?php $link=$t->id_barang; ?>
+                                    <tr> 
+                                        <td><?php echo $t->id_barang; ?></td>
+                                        <td><?php echo $t->nama_barang; ?></td>
+                                        <td><?php echo $t->kategori; ?></td>
+                                        <td><?php echo $t->jumlah; ?></td>
+                                        <td><?php echo $t->status; ?></td>
+                                        <td>
+                                            <a href="<?php echo base_url(); ?>/admin/inventaris_detail_admin/<?php echo str_replace(' ', '-', strtolower($link)); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -392,7 +345,7 @@
             </div>
             <div class="footer-r white">&nbsp;</div>
             <div class="footer-grid-r white">
-                <a class="footer-text" href="<?php echo base_url('admin/inventaris_semua'); ?>">
+                <a class="footer-text" href="inventaris-semua.html">
                     <i class="material-icons arrow-r">arrow_forward</i>
                     <br>
                     <div>

@@ -181,7 +181,7 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('login/pemberitahuan'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
@@ -190,9 +190,9 @@
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('dasboard'); ?>"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_barang'); ?>"><i class="material-icons" class="active-page">note_add</i>Peminjaman Baru</a></li>
-                    <li class="no-padding "><a class="waves-effect waves-grey " href="<?php echo base_url('login/peminjaman_data'); ?>"><i class="material-icons" >dvr</i>Data Peminjaman</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_barang_user'); ?>"><i class="material-icons" class="active-page">note_add</i>Peminjaman Baru</a></li>
+                    <li class="no-padding "><a class="waves-effect waves-grey " href="<?php echo base_url('login/peminjaman_data_user'); ?>"><i class="material-icons" >dvr</i>Data Peminjaman</a></li>
                 </ul>
             </div>
         </aside>
@@ -265,7 +265,10 @@
                                 <div class="card-content  white-text">
                                     <div class="row">
                                         <div class="col s12 m6 l6">
-                                            <h4>Nama Barang</h4>
+                                            <?php foreach ($detailbaranguser as $c) {
+                                        ?>
+                                            <h4><?php echo $c->nama_barang; ?></h4>
+                                        <?php } ?>
                                             <address>
                                                 Kode Barang : <br>
                                                 P: (123) 456-7890
@@ -368,7 +371,7 @@
         <div class="footer-grid container">
             <div class="footer-l white">&nbsp;</div>
             <div class="footer-grid-l white">
-                <a class="footer-text" href="<?php echo base_url('login/peminjaman_barang'); ?>">
+                <a class="footer-text" href="<?php echo base_url('login/peminjaman_barang_user'); ?>">
                     <i class="material-icons arrow-l">arrow_back</i>
                     <span class="direction">Kembali</span>
                     <div>

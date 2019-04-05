@@ -193,7 +193,7 @@
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey active" href="<?php echo base_url('admin/index'); ?>"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey active" href="<?php echo base_url(); ?>dasboard_admin"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
                     <li class="no-padding active">
                         <a class="collapsible-header waves-effect waves-grey active"><i class="material-icons">apps</i>Data Barang<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
@@ -219,27 +219,25 @@
             </div>
         </aside>
         <main class="mn-inner no-p">
-
             <div class="cyan darken-1">
                 <div class="container">
                     <div class="row">
                         <div class="col s12 m12 l12">
                             <div class="card card-transparent no-m">
                                 <div class="card-content  white-text">
-                                    <div class="row">
-                                        <div class="col s12 m6 l6">
-                                            <h4>Nama Barang</h4>
-                                            <address>
-                                                Kode Barang : <br>
-                                                P: (123) 456-7890
-                                            </address>
-                                        </div>
-                                        <div class="col s12 m6 l6 right-align">
-                                            <h4>Jenis Barang</h4>
-                                            <address>
-                                                Kode Peminjaman : <br>
-                                                P: (123) 456-7890
-                                            </address>
+                                    <?php foreach ($detailbarangeksternal as $c) {
+                                        ?>
+                                        <div class="row">
+                                            <div class="col s12 m6 l6">
+                                                <h4><?php echo $c->nama_barang; ?></h4>
+                                                <address>
+                                                    Kode Barang : <br>
+                                                    <?php echo $c->id_barang; ?>
+                                                </address>
+                                            </div>
+                                            <div class="col s12 m6 l6 right-align">
+                                                <h4><?php echo $c->kategori; ?></h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -247,59 +245,50 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 m12 l6">
-                     <div class="card card-transparent">
-                        <div class="card-content">
-                            <h5>Deskripsi Barang</h5>
-                            <blockquote>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                            </blockquote>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m12 l6">
-
-                    <div class="card card-transparent">
-                        <div class="card-content">
-                            <h5>Data Barang</h5>
-                            <br>
-                            <ul class="collection">
-                                <li class="collection-item">Inventaris dari : </li>
-                                <li class="collection-item">Jumlah : </li>
-                                <li class="collection-item">Status :</li>
-                                <li class="collection-item">Tanggal Masuk :</li>
-                                <li class="collection-item">Tanggal Pengembalian :</li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col s12 m12 l12">
-                    <div class="card card-transparent no-m">
-                        <div class="card-content invoice-relative-content">
-                            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l6">
+                         <div class="card card-transparent">
+                            <div class="card-content">
+                                <h5>Deskripsi Barang</h5>
+                                <blockquote>
+                                    <?php echo $c->deskripsi; ?>
+                                </blockquote>
                             </div>
-                            <div class="row">
-                                <div class="col s12 m8 l12">
-                                    <img class="materialboxed responsive-img" src="assets/images/card-image.jpg" alt="">
-
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card card-transparent">
+                            <div class="card-content">
+                                <h5>Data Barang</h5>
+                                <br>
+                                <ul class="collection">
+                                    <li class="collection-item">Inventaris dari : <?php echo $c->asal_barang; ?></li>
+                                    <li class="collection-item">Jumlah : <?php echo $c->jumlah; ?></li>
+                                    <li class="collection-item">Status : <?php echo $c->status; ?></li>
+                                    <li class="collection-item">Tanggal Masuk : <?php echo $c->tgl_masuk; ?></li>
+                                    <li class="collection-item">Tanggal Pengembalian : <?php echo $c->tgl_pengembalian; ?></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <div class="card card-transparent no-m">
+                            <div class="card-content invoice-relative-content">
+                                <div class="row">
+                                </div>
+                                <div class="row">
+                                    <div class="col s12 m8 l12">
+                                        <img class="materialboxed responsive-img" src="assets/images/card-image.jpg" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-            </div>
-
+            <?php } ?>
 
 
         </div>

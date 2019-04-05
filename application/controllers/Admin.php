@@ -1,29 +1,14 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-
-	function __construct(){
+	public function __construct(){
 		parent::__construct();		
 		$this->load->model('Admin_login');
 		$this->load->model('Inventaris');
- 
+		$this->load->model('Eksternal');
+		$this->load->helper('url');
+
 	}
 
 	function index()
@@ -37,16 +22,16 @@ class Admin extends CI_Controller {
 
 		$cek = $this->Admin_login->cek_login($username,$password)->num_rows();
 		if($cek > 0){
- 
+
 			$data_session = array(
 				'nama' => $username,
 				'status' => "login"
-				);
- 
+			);
+
 			$this->session->set_userdata($data_session);
- 
+
 			redirect(base_url("dasboard_admin"));
- 
+
 		}else{
 			echo "Username dan password salah !";
 		}
@@ -57,53 +42,97 @@ class Admin extends CI_Controller {
 		redirect(base_url());
 	}
 
+	/*-----------------------------------------<LINK>-------------------------------------------------*/
 
 	function inventaris_admin(){
-		 $this->load->view('inventaris_admin');
+		$data['tampilbarang'] = $this->Inventaris->tampil_barang();
+
+		$this->load->view('inventaris_admin',$data);
 	}
-	function inventaris_detail(){
-		 $this->load->view('inventaris-detail_admin');
-	}
-	function inventaris_semua(){
-		 $this->load->view('inventaris-semua_admin');
+
+	function inventaris_detail_admin(){
+		$id_barang=$this->uri->segment('3');
+		$nam=str_replace('-', '', strtolower($id_barang));
+		$data['detailbarangadmin']=$this->Inventaris->detail_barang_user($nam);
+		$data['tampil']=$this->Inventaris->detail_barang_user($nam);
+
+		$this->load->view('inventaris-detail_admin',$data);
 	}
 
 	function barang_eksternal_admin(){
-		 $this->load->view('barang-eksternal_admin');
+		$data['tampilbarang_eks'] = $this->Eksternal->tampil_barang();
+
+		$this->load->view('barang-eksternal_admin',$data);
 	}
-	function eksternal_semua(){
-		 $this->load->view('eksternal-semua_admin');
-	}
-	function eksternal_detail(){
-		 $this->load->view('eksternal-detail_admin');
+
+	function barang_eksternal_detail_admin(){
+		$id_barang=$this->uri->segment('3');
+		$nam=str_replace('-', '', strtolower($id_barang));
+		$data['detailbarangeksternal']=$this->Eksternal->detail_barang_eksternal($nam);
+		$data['tampil']=$this->Eksternal->detail_barang_eksternal($nam);
+
+		$this->load->view('eksternal-detail_admin',$data);
 	}
 
 	function pengadaan_admin(){
-		 $this->load->view('pengadaan_admin');
+		$this->load->view('pengadaan_admin');
 	}
 
 	function pengadaan_barang_data_admin(){
-		 $this->load->view('pengadaan-barang-data_admin');
+		$this->load->view('pengadaan-barang-data_admin');
 	}
 
 	function request_admin(){
-		 $this->load->view('request_admin');
+		$this->load->view('request_admin');
 	}
 
-	function request_detail(){
-		$this->load->view('request-detail_admin');
-	}
+
+	/*---------------------------------------</LINK>---------------------------------------------------*/
 
 	function tambah_barang(){
-		 $nama_barang=$this->input->post('nama_barang');
-		 $kategori=$this->input->post('kategori');
-		 $jumlah=$this->input->post('jumlah');
-		 $deskripsi=$this->input->post('deskripsi');
-		 $gambar=$this->input->post('gambar');
-		 $status=$this->input->post('status');
+		$nama_barang=$this->input->post('nama_barang');
+		$kategori=$this->input->post('kategori');
+		$jumlah=$this->input->post('jumlah');
+		$deskripsi=$this->input->post('deskripsi');
+		$gambar=$this->input->post('gambar');
+		$status=$this->input->post('status');
 
-		 $this->Inventaris->tambah_barang($nama_barang,$kategori,$jumlah,$deskripsi,$gambar,$status);
-		 redirect(base_url('admin/inventaris_admin'));
+		$this->Inventaris->tambah_barang($nama_barang,$kategori,$jumlah,$deskripsi,$gambar,$status);
+		redirect(base_url('admin/inventaris_admin'));
+	}
+
+	function tambah_barang_eksternal(){
+		$nama_barang=$this->input->post('nama_barang');
+		$asal_barang=$this->input->post('asal_barang');
+		$tgl_masuk=$this->input->post('tgl_masuk');
+		$tgl_pengembalian=$this->input->post('tgl_pengembalian');
+		$jumlah=$this->input->post('jumlah');
+		$status=$this->input->post('status');
+		$kategori=$this->input->post('kategori');
+		$gambar=$this->input->post('gambar');
+		
+		$this->Eksternal->tambah_barang($nama_barang,$asal_barang,$tgl_masuk,$tgl_pengembalian,$jumlah,$status,$kategori,$gambar);
+		redirect(base_url('admin/barang_eksternal_admin'));
+	}
+
+	function update_barang(){
+		$nama_barang=$this->input->post('nama_barang');
+		$kategori=$this->input->post('kategori');
+		$jumlah=$this->input->post('jumlah');
+		$deskripsi=$this->input->post('deskripsi');
+		$gambar=$this->input->post('gambar');
+		$status=$this->input->post('status');
+		$id_barang = $this->input->post('id_barang');
+
+		$this->Inventaris->update_barang($nama_barang,$kategori,$jumlah,$deskripsi,$gambar,$status,$id_barang);
+		redirect(base_url('admin'));
+	}
+
+	function delete_barang(){
+		$id_barang = $this->input->post('id_barang');
+
+		$this->Inventaris->hapus_barang($id_barang);
+		redirect(base_url('admin/inventaris_admin'));
 	}
 
 }

@@ -170,7 +170,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -182,18 +182,18 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('Dasboard/pemberitahuan_user'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
-                            <a class="waves-effect waves-grey" href = "<?php echo base_url('Dasboard/logout'); ?>"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                         </li>
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('Dasboard/index'); ?>"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('Dasboard/peminjaman_barang_user'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('Dasboard/peminjaman_data_user'); ?>"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang_user'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_data_user'); ?>"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
                 </ul>
             </div>
         </aside>
@@ -209,78 +209,36 @@
                             <table id="example" class="display responsive-table datatable-example">
                                 <thead>
                                     <tr>
-                                        <th>Id Pengadaan</th>
-                                        <th>Tanggal Input</th>
+                                        <th>ID</th>
+                                        <th>Nama Keranjang</th>
                                         <th>Nama Peminjam</th>
+                                        <th>Tanggal Input</th>
                                         <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Id Pengadaan</th>
+                                        <th>ID</th>
+                                        <th>Nama Keranjang</th>
+                                        <th>Nama Peminjam</th>
                                         <th>Tanggal Input</th>
-                                        <th>Jumlah Macam</th>
                                         <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="<?php echo base_url('Dasboard/detail_peminjaman2_user'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="<?php echo base_url('Dasboard/detail_peminjaman2_user'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="<?php echo base_url('Dasboard/detail_peminjaman2_user'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="<?php echo base_url('Dasboard/detail_peminjaman2_user'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="<?php echo base_url('Dasboard/detail_peminjaman2_user'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-                                        <td>
-                                            <a href="<?php echo base_url('Dasboard/detail_peminjaman2_user'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
-                                        </td>
-                                    </tr>
-
+                                    <?php foreach ($tampilkeranjangdata as $c) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $c->id_keranjang; ?></td>
+                                            <td><?php echo $c->nama_keranjang; ?></td>
+                                            <td><?php echo $c->nama_peminjam; ?></td>
+                                            <td><?php echo $c->tgl_pembuatan; ?></td>
+                                            <td><?php echo $c->status; ?></td>
+                                            <td><a href="detail-peminjaman.html" class="waves-effect waves-blue btn-flat">Detail</a></td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -309,13 +267,9 @@
     <script src="<?php echo base_url('assets'); ?>/plugins/materialize/js/materialize.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/jquery-blockui/jquery.blockui.js"></script>
-    <script src="<?php echo base_url('assets'); ?>/js/pages/table-data.js"></script>
-    <script src="<?php echo base_url('assets'); ?>/plugins/datatables/js/jquery.dataTables.min.js"></script>  
-    <script src="<?php echo base_url('assets'); ?>/plugins/jquery-validation/jquery.validate.min.js"></script>  
-    <script src="<?php echo base_url('assets'); ?>/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/datatables/js/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>
-    <script src="<?php echo base_url('assets'); ?>/js/pages/form-wizard.js"></script>
-    <script src="<?php echo base_url('assets'); ?>/js/pages/ui-modals.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/js/pages/table-data.js"></script>
 
 </body>
 </html>

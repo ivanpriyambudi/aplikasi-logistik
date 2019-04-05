@@ -252,7 +252,12 @@
                                                         <label for="quantity">Jumlah</label>
                                                         <input id="quantity" name="quantity" type="number" class="required validate">
                                                     </div></td>
-                                                    
+                                                    <td><select class="input-field browser-default">
+                                                        <option value="" disabled selected>Pilih Satuan Barang</option>
+                                                        <option value="1">Option 1</option>
+                                                        <option value="2">Option 2</option>
+                                                        <option value="3">Option 3</option>
+                                                    </select><br></td>
                                                     <td><div class="input-field">
                                                         <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
                                                         <label for="textarea1">Keterangan</label>
@@ -285,7 +290,7 @@
                 </div>
                 <div class="footer-r white">&nbsp;</div>
                 <div class="footer-grid-r white">
-                    <a class="footer-text" href="<?php echo base_url('admin/eksternal_semua'); ?>">
+                    <a class="footer-text" href="eksternal-semua.html">
                         <i class="material-icons arrow-r">arrow_forward</i>
                         <br>
                         <div>

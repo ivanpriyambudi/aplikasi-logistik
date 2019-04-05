@@ -170,7 +170,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -182,18 +182,18 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('Dasboard/pemberitahuan_user'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
-                            <a class="waves-effect waves-grey" href ="<?php echo base_url('Dasboard/logout'); ?>"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                         </li>
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('Dasboard/index'); ?>"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('Dasboard/peminjaman_barang_user'); ?>"><i class="material-icons" class="active-page">note_add</i>Peminjaman Baru</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('Dasboard/peminjaman_data_user'); ?>"><i class="material-icons">dvr</i>Data Peminjaman</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_barang_user'); ?>"><i class="material-icons" class="active-page">note_add</i>Peminjaman Baru</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_data_user'); ?>"><i class="material-icons">dvr</i>Data Peminjaman</a></li>
                 </ul>
             </div>
         </aside>
@@ -204,24 +204,29 @@
                 <div class="modal-content" style="padding-bottom: 0px;">
                     <section>
                         <div class="wizard-content">
-
-                            <div class="row">
-                                <div class="col m12">
-                                    <div class="row">
-                                        <div class="input-field col m12 s12">
-                                            <label for="firstName">Nama Peminjam</label>
-                                            <input id="firstName" name="firstName" type="text" class="required validate">
+                            <form class="col s12" method="post" action="<?php echo base_url('login/tambah_keranjang_peminjaman'); ?>">
+                                <div class="row">
+                                    <div class="col m12">
+                                        <div class="row">
+                                            <div class="input-field col m6 s6">
+                                                <label for="nama_peminjam">Nama Peminjam</label>
+                                                <input id="nama_peminjam" name="nama_peminjam" type="text" class="required validate">
+                                            </div>
+                                            <div class="input-field col m6 s6">
+                                                <label for="nim_peminjam">NIM Peminjam</label>
+                                                <input id="nim_peminjam" name="nim_peminjam" type="text" class="required validate">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col m12 s12 center">
-                                        <a class="waves-effect waves-teal btn-flat">Submit</a>
+                                    <div class="row">
+                                        <div class="col m12 s12 center">
+                                            <button class="waves-effect waves-teal btn-flat" type="submit">Submit</button>
+                                        </div>
                                     </div>
-                                </div>
 
-                            </div>
+                                </div>
+                            </form>
 
                         </div>
                     </section>
@@ -247,36 +252,25 @@
                                                 <thead>
                                                     <tr>
                                                         <th data-field="id">id</th>
-                                                        <th data-field="name">Nama Peminjam</th>
+                                                        <th data-field="name">Nama Keranjang</th>
                                                         <th data-field="name">Waktu Pembuatan</th>
                                                         <th data-field="name"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Eclair</td>
-                                                        <td>Eclair</td>
-                                                        <td><a class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Jellybean</td>
-                                                        <td>Eclair</td>
-                                                        <td><a class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Lollipop</td>
-                                                        <td>Eclair</td>
-                                                        <td><a class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>KitKat</td>
-                                                        <td>Eclair</td>
-                                                        <td><a class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
-                                                    </tr>
+                                                    <?php foreach ($tampilkeranjang as $t) {
+                                                        ?>
+                                                        
+                                                        <tr>
+
+                                                            <td><?php echo $t->id_keranjang; ?></td>
+                                                            <td><?php echo $t->nama_keranjang; ?></td>
+                                                            <td><?php echo $t->tgl_pembuatan; ?></td>
+
+                                                            <td><a href="<?php echo base_url('login/tambah/'.$t->id_keranjang); ?>" class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
+
+                                                        </tr>
+                                                    <?php } ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -306,12 +300,12 @@
                     <div class="card-panel" style="padding: 0px;">
                         <div class="row">
                             <div class="col s12 center">
-                               <p>Sebelum melakukan peminjaman, buatlah keranjang peminjaman terlebih dahulu.</p>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="col s12">
+                             <p>Sebelum melakukan peminjaman, buatlah keranjang peminjaman terlebih dahulu.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col s12">
                 <div class="card">
                     <div class="card-content" style="padding-bottom: 0px;">
                         <span class="card-title" style="margin-bottom: 0px;">Filter Pencarian Barang</span>
@@ -353,36 +347,43 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m3">
+            <?php foreach ($tampilbarang as $t) { ?>
+                <?php $link=$t->id_barang; ?>
+                <div class="col s12 m3">
 
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title">Card Title<i class="material-icons right">close</i></span>
-                        <ul class="collection">
-                            <li class="collection-item">Inventaris : DASPRO</li>
-                            <li class="collection-item">Status : Available</li>
-                            <li class="collection-item">Kategori : Elektronik</li>
-                        </ul>
-                        <div class="row" style="margin-bottom: 0px;">
-                          <div class="col m6 s12 center">
-                              <a class="waves-effect waves-blue btn-flat m-b-xs modal-trigger" href="#modal2" style="margin-bottom: 0px;">Pinjam</a>
-                          </div>
-                          <div class="col m6 s12 center">
-                              <a href="<?php echo base_url('Dasboard/detail_barang_user'); ?>" class="waves-effect waves-blue btn-flat m-b-xs" style="margin-bottom: 0px;">Detail</a>
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="assets/images/card-image2.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator"><?php echo $t->nama_barang; ?><i class="material-icons right">more_vert</i></span>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title"><?php echo $t->nama_barang; ?><i class="material-icons right">close</i></span>
+                            <ul class="collection">
+                                <li class="collection-item">Status : <?php echo $t->status; ?></li>
+                                <li class="collection-item">Kategori : <?php echo $t->kategori; ?></li>
+                            </ul>
+                            <div class="row" style="margin-bottom: 0px;">
+                              <div class="col m6 s12 center">
+                                  <a class="waves-effect waves-blue btn-flat m-b-xs modal-trigger" href="#modal2" style="margin-bottom: 0px;">Pinjam</a>
+                              </div>
+                              <div class="col m6 s12 center">
+                                  <a href="<?php echo base_url(); ?>/login/detail_barang_user/<?php echo str_replace(' ', '-', strtolower($link)); ?> " class="waves-effect waves-blue btn-flat m-b-xs" style="margin-bottom: 0px;">Detail</a>
+                              </div>
                           </div>
                       </div>
                   </div>
+
+
+
               </div>
+          <?php } ?>
+     <!--    <div class="col s12 m3">
 
-              <div class="card">
+            <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
+                    <img class="activator" src="assets/images/card-image2.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -393,13 +394,17 @@
                 </div>
             </div>
 
-        </div>
+            
 
+        </div> -->
+<!-- 
         <div class="col s12 m3">
 
+            
+
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
+                    <img class="activator" src="assets/images/card-image2.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -410,26 +415,15 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-
-        </div>
-
+        </div> -->
+<!-- 
         <div class="col s12 m3">
 
+            
+
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
+                    <img class="activator" src="assets/images/card-image2.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -440,50 +434,7 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col s12 m3">
-
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-
-        </div>
+        </div> -->
 
     </div>
 </main>

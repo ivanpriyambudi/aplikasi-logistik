@@ -3,7 +3,7 @@
 <head>
 
     <!-- Title -->
-    <title>Request Masuk</title>
+    <title>Data Pengadaan Barang</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta charset="UTF-8">
@@ -170,7 +170,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -189,7 +189,7 @@
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('admin/logout')?>" class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                         </li>
                     </ul>
                 </div>
@@ -214,7 +214,7 @@
                         </div>
                     </li>
                     <li class="no-padding active">
-                        <a href="<?php echo base_url('admin/request_admin'); ?>" class="waves-effect waves-grey active"><i class="material-icons" class="active-page">cloud_upload</i>Request</a>
+                        <a href="<?php echo base_url('admin/request_admin'); ?>" class="waves-effect waves-grey active" class="active-page"><i class="material-icons">cloud_upload</i>Request</a>
                     </li>
                 </ul>
             </div>
@@ -222,7 +222,7 @@
         <main class="mn-inner">
             <div class="row">
                 <div class="col s12">
-                    <div class="page-title">Request Barang Masuk</div>
+                    <div class="page-title">Data Request User</div>
                 </div>
 
                 <div class="col s12 m12 l12">
@@ -231,91 +231,75 @@
                             <table id="example" class="display responsive-table datatable-example">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Pemohon</th>
-                                        <th>Tgl Masuk</th>
-                                        <th>Tgl Dibutuhkan</th>
-                                        <th>Status Barang</th>
-                                        <th>Status Peminjaman</th>
+                                        <th>Id</th>
+                                        <th>Tanggal Input</th>
+                                        <th>Jumlah Macam</th>
+                                        <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Pemohon</th>
-                                        <th>Tgl Masuk</th>
-                                        <th>Tgl Dibutuhkan</th>
-                                        <th>Status Barang</th>
-                                        <th>Status Peminjaman</th>
+                                        <th>Id Pengadaan</th>
+                                        <th>Tanggal Input</th>
+                                        <th>Jumlah Macam</th>
+                                        <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
                                     <tr>
                                         <td>Tiger Nixon</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Tiger Nixon</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Tiger Nixon</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Tiger Nixon</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Tiger Nixon</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Tiger Nixon</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
 
@@ -334,7 +318,7 @@
                 </div>
                 <div class="footer-r white">&nbsp;</div>
                 <div class="footer-grid-r white">
-                    
+
                 </div>
             </div>
         </div>

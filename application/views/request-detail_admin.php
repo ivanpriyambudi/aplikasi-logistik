@@ -12,14 +12,14 @@
     <meta name="author" content="Steelcoders" />
 
     <!-- Styles -->
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets'); ?>/plugins/materialize/css/materialize.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="<?php echo base_url('assets'); ?>/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
+    <link href="assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
 
 
     <!-- Theme Styles -->
-    <link href="<?php echo base_url('assets'); ?>/css/alpha.min.css" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo base_url('assets'); ?>/css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -169,7 +169,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -188,18 +188,18 @@
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('admin/logout')?>" class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                         </li>
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey active" href="<?php echo base_url(); ?>dasboard_admmin"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey active" href="index.html"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
                     <li class="no-padding">
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Data Barang<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="<?php echo base_url('admin/inventaris_admin'); ?>">Inventaris</a></li>
-                                <li><a href="<?php echo base_url('admin/barang_eksternal_admin'); ?>">Barang Eksternal</a></li>
+                                <li><a href="inventaris.html">Inventaris</a></li>
+                                <li><a href="barang-eksternal.html">Barang Eksternal</a></li>
                             </ul>
                         </div>
                     </li>
@@ -207,13 +207,13 @@
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">cloud_download</i>Pengadaan<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="<?php echo base_url('admin/pengadaan_admin'); ?>">Pengadaan Barang Baru</a></li>
-                                <li><a href="<?php echo base_url('admin/pengadaan_barang_data_admin'); ?>">Data Pengadaan Barang</a></li>
+                                <li><a href="pengadaan.html">Pengadaan Barang Baru</a></li>
+                                <li><a href="pengadaan-barang-datal.html">Data Pengadaan Barang</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="no-padding active">
-                        <a href="<?php echo base_url('admin/request_admin'); ?>" class="waves-effect waves-grey active"><i class="material-icons" class="active-page">cloud_upload</i>Request</a>
+                        <a href="request.html" class="waves-effect waves-grey active"><i class="material-icons" class="active-page">cloud_upload</i>Request</a>
                     </li>
                 </ul>
             </div>
@@ -358,7 +358,7 @@
         <div class="footer-grid container">
             <div class="footer-l white">&nbsp;</div>
             <div class="footer-grid-l white">
-                <a class="footer-text" href="<?php echo base_url('admin/request_admin'); ?>">
+                <a class="footer-text" href="request.html">
                     <i class="material-icons arrow-l">arrow_back</i>
                     <span class="direction">Kembali</span>
                     <div>
@@ -372,12 +372,12 @@
 <div class="left-sidebar-hover"></div>
 
 <!-- Javascripts -->
-<script src="<?php echo base_url('assets'); ?>/plugins/jquery/jquery-2.2.0.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/plugins/materialize/js/materialize.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/plugins/jquery-blockui/jquery.blockui.js"></script>
-<script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/js/pages/ui-modals.js"></script>
+<script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+<script src="assets/plugins/materialize/js/materialize.min.js"></script>
+<script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
+<script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+<script src="assets/js/alpha.min.js"></script>
+<script src="assets/js/pages/ui-modals.js"></script>
 
 </body>
 </html>

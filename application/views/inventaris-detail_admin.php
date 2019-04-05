@@ -17,10 +17,6 @@
     <link href="<?php echo base_url('assets'); ?>/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
 
 
-
-
-
-
     <!-- Theme Styles -->
     <link href="<?php echo base_url('assets'); ?>/css/alpha.min.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo base_url('assets'); ?>/css/custom.css" rel="stylesheet" type="text/css"/>
@@ -88,8 +84,7 @@
                     <div class="header-title col s3">      
                         <span class="chapter-title">L - EAD</span>
                     </div>
-                    <ul class="right col s9 
-                    m3 nav-right-menu">
+                    <ul class="right col s9 m3 nav-right-menu">
                         <li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">more_vert</i></a></li>
                         <li class="hide-on-small-and-down"><a href="javascript:void(0)" data-activates="dropdown1" class="dropdown-button dropdown-right show-on-large"><i class="material-icons">notifications_none</i><span class="badge">4</span></a></li>
                         <li class="hide-on-med-and-up"><a href="javascript:void(0)" class="search-toggle"><i class="material-icons">search</i></a></li>
@@ -198,7 +193,7 @@
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey active" href="<?php echo base_url('admin/index'); ?>"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey active" href="<?php echo base_url(); ?>dasboard_admin"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
 
                     <li class="no-padding active">
                         <a class="collapsible-header waves-effect waves-grey active"><i class="material-icons">apps</i>Data Barang<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
@@ -214,7 +209,7 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="<?php echo base_url('admin/pengadaan_admin'); ?>">Pengadaan Barang Baru</a></li>
-                                <li><a href="<?php echo base_url('admin/pengadaan_barang_data_Admin'); ?>">Data Pengadaan Barang</a></li>
+                                <li><a href="<?php echo base_url('admin/pengadaan_barang_data_admin'); ?>">Data Pengadaan Barang</a></li>
                             </ul>
                         </div>
                     </li>
@@ -231,68 +226,73 @@
                     <section>
                         <div class="wizard-content" style="padding-bottom: 0px;">
 
-                            <div class="row">
-                                <div class="col m6">
+                            <form class="col s12" method="post" action="<?php echo base_url('admin/update_barang'); ?>">
+                                <?php foreach ($detailbarangadmin as $d) { 
+                                    ?>
                                     <div class="row">
-                                        <div class="input-field col m12 s12">
-                                            <label for="firstName">Nama Barang</label>
-                                            <input id="firstName" name="firstName" type="text" class="required validate">
-                                        </div>
-                                        <div class="input-field col m12 s12">
-                                            <label for="lastName">Kategori</label>
-                                            <input id="lastName" name="lastName" type="text" class="required validate">
-                                        </div>
-                                        <div class="input-field col m12 s12">
-                                            <label for="quantity">Jumlah</label>
-                                            <input id="quantity" name="quantity" type="number" class="required validate">
-                                        </div>
-                                        <div class="input-field col m12 s12">
-                                            <select>
-                                                <option value="Available">Available</option>
-                                                <option value="Not Available">Not Available</option>
-                                            </select>
-                                            <label>Status Barang</label>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                                <div class="col m6">
-                                    <div class="row">
-
-                                        <div class="input-field col m12 s12">
-                                            <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
-                                            <label for="textarea1">Deskripsi</label>
-                                        </div>
-
-                                        <div class="input-field col s12">
-                                           <form action="#" class="p-v-xs">
-                                            <div class="file-field input-field">
-                                                <div class="btn teal lighten-1">
-                                                    <span>Upload</span>
-                                                    <input type="file" multiple>
+                                        <div class="col m6">
+                                            <div class="row">
+                                                <div class="input-field col m12 s12">
+                                                    <label class="active" for="nama_barang">Nama Barang</label>
+                                                    <input id="nama_barang" name="nama_barang" type="text" class="required validate" value="<?php echo $d->nama_barang; ?>">
                                                 </div>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text" placeholder="Upload Gambar Barang">
+                                                <div class="input-field col m12 s12">
+                                                    <label class="active" for="kategori">Kategori</label>
+                                                    <input id="kategori" name="kategori" type="text" class="required validate" value="<?php echo $d->kategori; ?>">
+                                                </div>
+                                                <div class="input-field col m12 s12">
+                                                    <label class="active" for="jumlah">Jumlah</label>
+                                                    <input id="jumlah" name="jumlah" type="number" class="required validate" value="<?php echo $d->jumlah; ?>">
+                                                </div>
+                                                <div class="input-field col m12 s12">
+                                                    <select name="status">
+                                                        <option value="<?php echo $d->status; ?>"><?php echo $d->status; ?></option>
+                                                        <option value="Available">Available</option>
+                                                        <option value="Not Available">Not Available</option>
+                                                    </select>
+                                                    <label>Status Barang</label>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
+                                        <div class="col m6">
+                                            <div class="row">
+
+                                                <div class="input-field col m12 s12">
+                                                    <textarea id="deskripsi" name="deskripsi" class="materialize-textarea" length="120"><?php echo $d->deskripsi; ?></textarea>
+                                                    <label class="active" for="textarea1">Deskripsi</label>
+                                                </div>
+
+                                                <div class="input-field col s12">
+                                                 <form action="#" class="p-v-xs">
+                                                    <div class="file-field input-field">
+                                                        <div class="btn teal lighten-1">
+                                                            <span>Upload</span>
+                                                            <input type="file" multiple>
+                                                        </div>
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Gambar Barang">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <input id="id_barang" name="id_barang" type="text" class="required validate" value="<?php echo $d->id_barang; ?>" hidden>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col m12 s12 center">
+                                            <button class="waves-effect waves-teal btn-flat" type="submit">Simpan Perubahan</button>
+                                        </div>
+                                    </div>
+
                                 </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col m12 s12 center">
-                                    <a class="waves-effect waves-teal btn-flat">Simpan Perubahan</a>
-                                </div>
-                            </div>
-
-                        </div>
-
+                            <?php } ?>
+                        </form>
+                        
                     </div>
                 </section>
             </div>
+            
 
 
             <div class="modal-footer">
@@ -310,14 +310,20 @@
                             <div class="card-content  white-text">
                                 <div class="row">
                                     <div class="col s12 m6 l6">
-                                        <h4>Nama Barang</h4>
-                                        <address>
-                                            Kode Barang : <br>
-                                            P: (123) 456-7890
-                                        </address>
-                                    </div>
-                                    <div class="col s12 m6 l6 right-align">
-                                        <h4>Jenis Barang</h4>
+                                        <?php foreach ($detailbarangadmin as $c) {
+                                            ?>
+                                            <h4><?php echo $c->nama_barang; ?></h4>
+
+                                            <address>
+                                                Kode Barang : <br>
+                                                <?php echo $c->id_barang; ?>
+                                            </address>
+                                        </div>
+                                        <div class="col s12 m6 l6 right-align">
+                                            <h4><?php echo $c->kategori; ?></h4>
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -325,35 +331,36 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                     <div class="card card-transparent">
+                        <div class="card-content">
+                            <h5>Deskripsi Barang</h5>
+                            <blockquote>
+                                <?php echo $c->deskripsi; ?>
+                            </blockquote>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="col s12 m12 l6">
-                   <div class="card card-transparent">
-                    <div class="card-content">
-                        <h5>Deskripsi Barang</h5>
-                        <blockquote>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                        </blockquote>
 
+                    <div class="card card-transparent">
+                        <div class="card-content">
+                            <h5>Data Barang</h5>
+                            <br>
+                            <ul class="collection">
+                                <li class="collection-item">Jumlah : <?php echo $c->jumlah; ?></li>
+                                <li class="collection-item">Status : <?php echo $c->status; ?></li>
+
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col s12 m12 l6">
-
-                <div class="card card-transparent">
-                    <div class="card-content">
-                        <h5>Data Barang</h5>
-                        <br>
-                        <ul class="collection">
-                            <li class="collection-item">Jumlah : </li>
-                            <li class="collection-item">Status :</li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php }?>
 
 
         <div class="row">
@@ -373,9 +380,18 @@
 
                                             <p style="padding-bottom: 1rem;">Jika anda yakin untuk menghapus data barang ini, maka silahkan klik link di bawah ini!</p>
 
-                                            <div class="center">
-                                                <a class="waves-effect waves-teal btn-flat">DELETE</a>
-                                            </div>
+                                            <form class="col s12" method="post" action="<?php echo base_url('admin/delete_barang'); ?>">
+
+                                                <?php foreach ($detailbarangadmin as $d) { ?>
+                                                    
+                                                    <div class="center">
+                                                        <input id="id_barang" name="id_barang" type="text" class="required validate" value="<?php echo $d->id_barang; ?>" hidden>
+                                                        <button type="submit" class="waves-effect waves-teal btn-flat">DELETE</button>
+                                                    </div>
+
+                                                <?php } ?>
+
+                                            </form>
 
                                             <br>
                                             <br>
@@ -383,7 +399,6 @@
                                         </div>
                                     </li>
                                 </ul>
-
                             </div>
                             <div class="col s12 m4 l4">
                                 <ul class="collection">
@@ -437,7 +452,7 @@
     <div class="footer-grid container">
         <div class="footer-l white">&nbsp;</div>
         <div class="footer-grid-l white">
-            <a class="footer-text" href="i<?php echo base_url('admin/inventaris_admin'); ?>">
+            <a class="footer-text" href="<?php echo base_url('admin/inventaris_admin');?>">
                 <i class="material-icons arrow-l">arrow_back</i>
                 <span class="direction">Kembali</span>
                 <div>
