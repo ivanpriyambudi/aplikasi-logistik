@@ -169,7 +169,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="assets/images/profile-image.png" class="circle" alt="">
+                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -371,7 +371,7 @@
                         </div>
                         <div class="row">
                             <div class="col s12 m8 l8">
-                                <img class="materialboxed responsive-img" src="assets/images/card-image.jpg" alt="">
+                                <img class="materialboxed responsive-img" src="<?php echo base_url('assets'); ?>/images/card-image.jpg" alt="">
 
                                 <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
                                     <li class="">
@@ -403,7 +403,7 @@
                             <div class="col s12 m4 l4">
                                 <ul class="collection">
                                     <li class="collection-item avatar">
-                                        <img src="assets/images/profile-image.png" alt="" class="circle">
+                                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" alt="" class="circle">
                                         <span class="title">Title</span>
                                         <p>First Line <br>
                                             Second Line

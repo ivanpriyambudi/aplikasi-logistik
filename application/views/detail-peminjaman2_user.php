@@ -190,7 +190,7 @@
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="index.html"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard_user"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
                     <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
                     <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_data'); ?>"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
                 </ul>

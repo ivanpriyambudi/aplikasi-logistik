@@ -12,14 +12,14 @@
     <meta name="author" content="Steelcoders" />
     
     <!-- Styles -->
-    <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets'); ?>/plugins/materialize/css/materialize.min.css"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
+    <link href="<?php echo base_url('assets'); ?>/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
 
     
     <!-- Theme Styles -->
-    <link href="assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url('assets'); ?>/css/alpha.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url('assets'); ?>/css/custom.css" rel="stylesheet" type="text/css"/>
     
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -169,7 +169,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="assets/images/profile-image.png" class="circle" alt="">
+                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -193,12 +193,12 @@
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="index.html"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url(); ?>dasboard_admin"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
                     <li class="no-padding">
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Data Barang<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="inventaris.html">Inventaris</a></li>
+                                <li><a href="<?php echo base_url('admin/inventaris_admin'); ?>">Inventaris</a></li>
                                 <li><a href="search.html">Barang Eksternal</a></li>
                             </ul>
                         </div>
@@ -207,13 +207,13 @@
                         <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">cloud_download</i>Pengadaan<i class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="pengadaan.html">Pengadaan Barang Baru</a></li>
-                                <li><a href="pengadaan-barang-datal.html">Data Pengadaan Barang</a></li>
+                                <li><a href="<?php echo base_url('admin/pengadaan_admin'); ?>">Pengadaan Barang Baru</a></li>
+                                <li><a href="<?php echo base_url('admin/pengadaan_barang_data_admin'); ?>">Data Pengadaan Barang</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="no-padding">
-                        <a href="request.html" class="waves-effect waves-grey"><i class="material-icons">cloud_upload</i>Request</a>
+                        <a href="<?php echo base_url('admin/request_admin'); ?>" class="waves-effect waves-grey"><i class="material-icons">cloud_upload</i>Request</a>
                     </li>
                 </ul>
             </div>
@@ -242,7 +242,7 @@
 
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/images/card-image2.jpg" alt="">
+                                <img class="activator" src="<?php echo base_url('assets'); ?>ssets/images/card-image2.jpg" alt="">
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -255,37 +255,7 @@
 
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/images/card-image2.jpg" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title">Card Title<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col s12 m3">
-
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/images/card-image2.jpg" alt="">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title">Card Title<i class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/images/card-image2.jpg" alt="">
+                                <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -302,7 +272,7 @@
 
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/images/card-image2.jpg" alt="">
+                                <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -315,7 +285,7 @@
 
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/images/card-image2.jpg" alt="">
+                                <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -332,7 +302,7 @@
 
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/images/card-image2.jpg" alt="">
+                                <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -345,7 +315,37 @@
 
                         <div class="card">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/images/card-image2.jpg" alt="">
+                                <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">Card Title<i class="material-icons right">close</i></span>
+                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col s12 m3">
+
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">Card Title<i class="material-icons right">close</i></span>
+                                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="<?php echo base_url('assets'); ?>/images/card-image2.jpg" alt="">
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator">Card Reveal<i class="material-icons right">more_vert</i></span>
@@ -365,7 +365,7 @@
             <div class="footer-grid container">
                 <div class="footer-l white">&nbsp;</div>
                 <div class="footer-grid-l white">
-                    <a class="footer-text" href="barang-eksternal.html">
+                    <a class="footer-text" href="<?php echo base_url('admin/barang_eksternal_admin'); ?>">
                         <i class="material-icons arrow-l">arrow_back</i>
                         <span class="direction">Kembali</span>
                         <div>
@@ -382,11 +382,11 @@
     <div class="left-sidebar-hover"></div>
 
     <!-- Javascripts -->
-    <script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
-    <script src="assets/plugins/materialize/js/materialize.min.js"></script>
-    <script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
-    <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
-    <script src="assets/js/alpha.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/jquery/jquery-2.2.0.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/materialize/js/materialize.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/jquery-blockui/jquery.blockui.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>
 
 </body>
 </html>
