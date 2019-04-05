@@ -326,7 +326,7 @@
                                         <td><?php echo $t->jumlah; ?></td>
                                         <td><?php echo $t->status; ?></td>
                                         <td>
-                                           <a href ="<?php echo base_url(); ?>/admin/inventaris_detail_admin/<?php echo str_replace(' ', '-',strtolower($link));?>"class="waves-effect waves-blue btn-flat">Detail</a>;
+                                           <a href ="<?php echo base_url(); ?>/admin/inventaris_detail_admin/<?php echo str_replace(' ', '-',strtolower($link));?>"class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
