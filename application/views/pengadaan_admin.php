@@ -237,7 +237,7 @@
                                 <span class="card-title">Data Pengadaan Barang</span><br>
                                 <div class="row">
                                     <form class="col s12">
-                                        <div class="row" style="    margin-top: -15px;">
+                                        <div class="row" style="margin-top: -15px;">
                                             <table id="field">
                                                 <tr>
                                                     <td><div class="input-field">
@@ -254,9 +254,9 @@
                                                     </div></td>
                                                     <td><select class="input-field browser-default">
                                                         <option value="" disabled selected>Pilih Satuan Barang</option>
-                                                        <option value="1">Option 1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
+                                                        <option value="1">Unit</option>
+                                                        <option value="2">pcs</option>
+                                                        <option value="3">buah</option>
                                                     </select><br></td>
                                                     <td><div class="input-field">
                                                         <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
