@@ -169,7 +169,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('admin/request_admin'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -181,7 +181,7 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('admin/pemberitahuan_user'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
@@ -190,9 +190,9 @@
                     </ul>
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard_user"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_data'); ?>"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang_user'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_data_user'); ?>"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
                 </ul>
             </div>
         </aside>
@@ -237,34 +237,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <form method="post" action="<?php echo base_url('login/edit_jumlah_barang'); ?>">
+                                    <?php foreach ($barang as $b) {?>
                                     <tr>
-                                        <td>Alvin</td>
+                                        <td><?php echo $b->nama_barang; ?></td>
                                         <td><div class="input-field col m12 s12">
                                             <label for="quantity">Jumlah</label>
                                             <input id="quantity" name="quantity" type="number" class="required validate">
+                                            <input type="hidden" name="nambar" value="<?php echo $b->nama_barang; ?>">
                                         </div></td>
                                     </tr>
-                                    <tr>
-                                        <td>Alan</td>
-                                        <td><div class="input-field col m12 s12">
-                                            <label for="quantity">Jumlah</label>
-                                            <input id="quantity" name="quantity" type="number" class="required validate">
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td><div class="input-field col m12 s12">
-                                            <label for="quantity">Jumlah</label>
-                                            <input id="quantity" name="quantity" type="number" class="required validate">
-                                        </div></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shannon</td>
-                                        <td><div class="input-field col m12 s12">
-                                            <label for="quantity">Jumlah</label>
-                                            <input id="quantity" name="quantity" type="number" class="required validate">
-                                        </div></td>
-                                    </tr>
+                                    <?php $nama_barang = $b->nama_barang; ?>
+                                    <?php } ?>
+                                    <button class="waves-effect waves-teal btn-flat" type="submit" href="<?php echo base_url('login/edit_jumlah_barang'); ?>">Kirim</button>
+                                    </form>
                                 </tbody>
                             </table>
 
@@ -272,23 +258,24 @@
                     </div>
                 </div>
                 <div class="col s12 m12 l4">
-
+                    
                     <div class="card card-transparent">
                         <div class="card-content">
                             <h5>Data Peminjaman</h5>
                             <br>
+                            <?php foreach ($detailuser as $d) {?>
                             <ul class="collection">
-                                <li class="collection-item">Nama Pemohon : Sampel</li>
-                                <li class="collection-item">Tanggal Input Request : Sampel</li>
-                                <li class="collection-item">Tanggal Digunakan : <div class="col s12">
+                                <li class="collection-item">Nama Pemohon : <?php echo $d->nama_peminjam; ?></li>
+                                <li class="collection-item">Tanggal Input Request : <?php echo $d->tgl_pembuatan; ?></li>
+                                <li class="collection-item">Tanggal Digunakan : <?php echo $d->tgl_dibutuhkan; ?><div class="col s12">
                                     <label for="birthdate">Inputkan Tanggal</label>
                                     <input id="birthdate" type="text" class="datepicker">
                                 </div></li>
                             </ul>
-
+                            <?php $idKeranjang = $d->id_keranjang; ?>
+                            <?php }?>
                         </div>
                     </div>
-
                     <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
                         <li class="">
                             <div class="collapsible-header"><i class="material-icons">send</i>Kirim Permintaan</div>
@@ -296,7 +283,8 @@
                                 <p style="padding-bottom: 1rem;">Jika anda yakin untuk mengirim permintaan peminjaman ini, maka silahkan klik link di bawah ini!</p>
 
                                 <div class="center">
-                                    <a class="waves-effect waves-teal btn-flat">Kirim</a>
+                                    
+                                    
                                 </div>
                                 <br>
                                 <br>
@@ -330,7 +318,7 @@
         <div class="footer-grid container">
             <div class="footer-l white">&nbsp;</div>
             <div class="footer-grid-l white">
-                <a class="footer-text" href="<?php echo base_url('login/peminjaman_data'); ?>">
+                <a class="footer-text" href="<?php echo base_url('login/peminjaman_barang_user'); ?>">
                     <i class="material-icons arrow-l">arrow_back</i>
                     <span class="direction">Kembali</span>
                     <div>

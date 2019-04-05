@@ -170,7 +170,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -189,7 +189,7 @@
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
-                            <a href = "<?php echo base_url('admin/logout'); ?>" class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                         </li>
                     </ul>
                 </div>
@@ -254,7 +254,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/barang_request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -263,7 +263,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/barang_request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -272,7 +272,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/barang_request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -281,7 +281,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/barang_request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -290,7 +290,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/barang_request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -299,7 +299,7 @@
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/barang_request_detail'); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="eksternal-detail.html" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
 

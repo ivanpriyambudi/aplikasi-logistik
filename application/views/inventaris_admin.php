@@ -170,7 +170,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -326,7 +326,7 @@
                                         <td><?php echo $t->jumlah; ?></td>
                                         <td><?php echo $t->status; ?></td>
                                         <td>
-                                           <a href ="<?php echo base_url(); ?>/admin/inventaris_detail_admin/<?php echo str_replace(' ', '-',strtolower($link));?>"class="waves-effect waves-blue btn-flat">Detail</a>
+                                            <a href="<?php echo base_url(); ?>/admin/inventaris_detail_admin/<?php echo str_replace(' ', '-', strtolower($link)); ?>" class="waves-effect waves-blue btn-flat">Detail</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -345,7 +345,7 @@
             </div>
             <div class="footer-r white">&nbsp;</div>
             <div class="footer-grid-r white">
-                <a class="footer-text" href="<?php echo base_url('admin/inventaris_admin'); ?>">
+                <a class="footer-text" href="inventaris-semua.html">
                     <i class="material-icons arrow-r">arrow_forward</i>
                     <br>
                     <div>

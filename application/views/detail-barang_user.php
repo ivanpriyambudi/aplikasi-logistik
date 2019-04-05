@@ -169,7 +169,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -181,7 +181,7 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('admin/pemberitahuan'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
@@ -213,36 +213,25 @@
                                                 <thead>
                                                     <tr>
                                                         <th data-field="id">id</th>
-                                                        <th data-field="name">Nama Peminjam</th>
+                                                        <th data-field="name">Nama Keranjang</th>
                                                         <th data-field="name">Waktu Pembuatan</th>
                                                         <th data-field="name"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Eclair</td>
-                                                        <td>Eclair</td>
-                                                        <td><a class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Jellybean</td>
-                                                        <td>Eclair</td>
-                                                        <td><a class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Lollipop</td>
-                                                        <td>Eclair</td>
-                                                        <td><a class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>KitKat</td>
-                                                        <td>Eclair</td>
-                                                        <td><a class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
-                                                    </tr>
+                                                    <?php foreach ($tampilkeranjang as $t) {
+                                                        ?>
+                                                        
+                                                        <tr>
+
+                                                            <td><?php echo $t->id_keranjang; ?></td>
+                                                            <td><?php echo $t->nama_keranjang; ?></td>
+                                                            <td><?php echo $t->tgl_pembuatan; ?></td>
+                                                            <?php foreach ($detailbaranguser as $c) {?>
+                                                            <td><a href="<?php echo base_url('login/tambah/'.$t->id_keranjang.'/'.$c->id_barang); ?>" class="waves-effect waves-blue btn-flat m-b-xs">Pilih</a></td>
+                                                            <?php } ?>
+                                                        </tr>
+                                                    <?php } ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -265,8 +254,7 @@
                                 <div class="card-content  white-text">
                                     <div class="row">
                                         <div class="col s12 m6 l6">
-                                            <?php foreach ($detailbaranguser as $c) {
-                                        ?>
+                                            <?php foreach ($detailbaranguser as $c) {?>
                                             <h4><?php echo $c->nama_barang; ?></h4>
                                         <?php } ?>
                                             <address>
@@ -284,6 +272,7 @@
                     </div>
                 </div>
             </div>
+            <?php foreach ($detailbaranguser as $c) {?>
             <div class="container">
                 <div class="row">
                     <div class="col s12 m12 l6">
@@ -291,7 +280,7 @@
                         <div class="card-content">
                             <h5>Deskripsi Barang</h5>
                             <blockquote>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                                <?php echo $c->deskripsi; ?>
                             </blockquote>
 
                         </div>
@@ -304,8 +293,8 @@
                             <h5>Data Barang</h5>
                             <br>
                             <ul class="collection">
-                                <li class="collection-item">Jumlah : </li>
-                                <li class="collection-item">Status :</li>
+                                <li class="collection-item">Jumlah :  <?php echo $c->jumlah; ?></li>
+                                <li class="collection-item">Status :  <?php echo $c->status; ?></li>
                             </ul>
 
                         </div>
@@ -322,7 +311,7 @@
                             </div>
                             <div class="row">
                                 <div class="col s12 m8 l8">
-                                    <img class="materialboxed responsive-img" src="<?php echo base_url('assets'); ?>/images/card-image.jpg" alt="">
+                                    <img class="materialboxed responsive-img" src="assets/images/card-image.jpg" alt="">
 
 
 
@@ -330,10 +319,6 @@
                                 <div class="col s12 m4 l4">
                                     <ul class="collection with-header">
                                         <li class="collection-header"><h5>Keterangan : </h5></li>
-                                        <li class="collection-item">Alvin</li>
-                                        <li class="collection-item">Alvin</li>
-                                        <li class="collection-item">Alvin</li>
-                                        <li class="collection-item">Alvin</li>
                                     </ul>
                                     <ul class="collapsible collapsible-accordion" data-collapsible="accordion">
                                         <li class="">
@@ -362,7 +347,7 @@
                 </div>
 
             </div>
-
+            <?php } ?>
 
 
         </div>

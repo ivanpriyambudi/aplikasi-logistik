@@ -77,9 +77,7 @@ class Admin extends CI_Controller {
 	function pengadaan_admin(){
 		$this->load->view('pengadaan_admin');
 	}
-function eksternal_semua(){
-		$this->load->view('pengadaan_admin');
-	}
+
 	function pengadaan_barang_data_admin(){
 		$this->load->view('pengadaan-barang-data_admin');
 	}
@@ -88,14 +86,6 @@ function eksternal_semua(){
 		$this->load->view('request_admin');
 	}
 
-function pemberitahuan(){
-		$this->load->view('pemberitahuan_user');
-	}
-
-	function barang_request_detail(){
-		$this->load->view('request-detail_admin');
-	}
-	
 
 	/*---------------------------------------</LINK>---------------------------------------------------*/
 

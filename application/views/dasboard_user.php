@@ -170,7 +170,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -182,11 +182,11 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('admin/pemberitahuan'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
-                            <a class="waves-effect waves-grey" href = "<?php echo base_url('login/logout'); ?>"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                         </li>
                     </ul>
                 </div>
@@ -251,7 +251,7 @@
                                         <td>Kursi</td>
                                         <td>12321</td>
                                         <td>Dec 16, 18:12</td>
-                                        <td><a href="<?php echo base_url('login/detail_barang_user'); ?>" class="waves-effect waves-blue btn-flat">Detail</a></td>
+                                        <td><a href="detail-peminjaman.html" class="waves-effect waves-blue btn-flat">Detail</a></td>
                                     </tr>
                                 </tbody>
                             </table>

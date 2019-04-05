@@ -170,7 +170,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -182,11 +182,11 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('admin/pemberitahuan'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
-                            <a class="waves-effect waves-grey" href = "<?php echo base_url('login/logout'); ?>"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                            <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                         </li>
                     </ul>
                 </div>
@@ -369,7 +369,7 @@
                                   <a class="waves-effect waves-blue btn-flat m-b-xs modal-trigger" href="#modal2" style="margin-bottom: 0px;">Pinjam</a>
                               </div>
                               <div class="col m6 s12 center">
-                                  <a href="<?php echo base_url(); ?>/login/detail_barang_user/<?php echo str_replace(' ', '-', strtolower($link)); ?> " class="waves-effect waves-blue btn-flat m-b-xs" style="margin-bottom: 0px;">Detail</a>
+                                  <a href="<?php echo base_url('login/detail_barang_user/'.$t->id_barang); ?>" class="waves-effect waves-blue btn-flat m-b-xs" style="margin-bottom: 0px;">Detail</a>
                               </div>
                           </div>
                       </div>

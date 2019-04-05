@@ -19,7 +19,7 @@
 
     <!-- Theme Styles -->
     <link href="<?php echo base_url('assets'); ?>/css/alpha.min.css" rel="stylesheet" type="text/css"/>
-    <link href="asset<?php echo base_url('assets'); ?>s/css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url('assets'); ?>/css/custom.css" rel="stylesheet" type="text/css"/>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -169,7 +169,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -181,7 +181,7 @@
                 <div class="sidebar-account-settings">
                     <ul>
                         <li class="no-padding">
-                            <a href="<?php echo base_url('admin/pemberitahuan_user'); ?>" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
+                            <a href="pemberitahuan.html" class="waves-effect waves-grey"><i class="material-icons">notifications</i>Data Request</a>
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
@@ -191,8 +191,8 @@
                 </div>
                 <ul class="sidebar-menu collapsible collapsible-accordion" data-collapsible="accordion">
                     <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url(); ?>dasboard"><i class="material-icons">settings_input_svideo</i>Dashboard</a></li>
-                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
-                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_data'); ?>"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="<?php echo base_url('login/peminjaman_barang_user'); ?>"><i class="material-icons">note_add</i>Peminjaman Baru</a></li>
+                    <li class="no-padding active"><a class="waves-effect waves-grey active" href="<?php echo base_url('login/peminjaman_data_user'); ?>"><i class="material-icons" class="active-page">dvr</i>Data Peminjaman</a></li>
                 </ul>
             </div>
         </aside>
@@ -330,7 +330,7 @@
         <div class="footer-grid container">
             <div class="footer-l white">&nbsp;</div>
             <div class="footer-grid-l white">
-                <a class="footer-text" href="<?php echo base_url('login/peminjaman_data'); ?>">
+                <a class="footer-text" href="<?php echo base_url('login/peminjaman_barang_user'); ?>">
                     <i class="material-icons arrow-l">arrow_back</i>
                     <span class="direction">Kembali</span>
                     <div>
@@ -345,7 +345,7 @@
 
 <!-- Javascripts -->
 <script src="<?php echo base_url('assets'); ?>/plugins/jquery/jquery-2.2.0.min.js"></script>
-<script src="ass<?php echo base_url('assets'); ?>ets/plugins/materialize/js/materialize.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/plugins/materialize/js/materialize.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/plugins/material-preloader/js/materialPreloader.min.js"></script>
 <script src="<?php echo base_url('assets'); ?>/plugins/jquery-blockui/jquery.blockui.js"></script>
 <script src="<?php echo base_url('assets'); ?>/js/alpha.min.js"></script>

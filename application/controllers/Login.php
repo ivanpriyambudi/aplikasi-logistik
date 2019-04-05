@@ -87,46 +87,60 @@ class Login extends CI_Controller {
 		redirect(base_url('login/peminjaman_barang_user'));
 	}
 
-	function tambah($id_keranjang) {
+	function tambah($id_keranjang, $id_barang) {
 		$this->load->database();
 		$this->load->model('Peminjaman','',TRUE);
+		$this->load->model('Inventaris');
 		//$idx = $this->Peminjaman->get_id_keranjang($id);
 
 		//$data = $this->Peminjaman->get_nama_keranjang($id_keranjang);
 
 		$data2 = $this->Peminjaman->get_nama_keranjang($id_keranjang);
+		$bar = $this->Inventaris->detail_barang_user($id_barang);
 
-		// foreach ($d as $k) {
-		// 	$m=$k->nama_keranjang;
-		// }
-
-		// $data   =   array();
-
-		// foreach ($data2->result_array() as $row):                                                     
-		// 	$data[] = $row['nama_keranjang'];
-		// endforeach;
-
-		$data['data']= $data2->result();
-
-		$my_values = array();
-		foreach($data as $row)
-		{
-			$my_values[] = $row->data2;
+		foreach ($bar as $b) {
+			$nambar = $b->nama_barang;
+		}
+		foreach ($data2 as $k) {
+			$nama = $k->nama_keranjang;
 		}
 
-		$this->Peminjaman->insert_into($id_keranjang, $data[0]);
+		$this->Peminjaman->insert_into($id_keranjang, $nama, $nambar);
 
 		redirect(base_url('login/peminjaman_barang_user'));
 	}
 
-	function detail_barang_user(){
+	function detail_barang_user($id){
 		$id_barang=$this->uri->segment('3');
 		$nam=str_replace('-', '', strtolower($id_barang));
-		$data['detailbaranguser']=$this->Inventaris->detail_barang_user($nam);
+		$data['tampilkeranjang'] = $this->Peminjaman->tampil_keranjang();
+		$data['detailbaranguser']=$this->Inventaris->detail_barang_user($id);
 		$data['tampil']=$this->Inventaris->detail_barang_user($nam);
 
 		$this->load->view('detail-barang_user',$data);
 	}
 
+	function detail_peminjaman(){
+		$this->load->view('detail-peminjaman_user');
+	}
+
+	function detail_peminjaman2($id, $name){
+		$data['detailuser']=$this->Peminjaman->get_nama_keranjang($id);
+		$data['barang']=$this->Peminjaman->get_barang_by_name($name);
+		$this->load->view('detail-peminjaman2_user',$data);
+	}
+
+	function edit_jumlah_barang(){
+		$nama=$this->input->post('nambar');
+		$jumlah=$this->input->post('quantity');
+		$q = $this->Peminjaman->edit_jumlah($nama, $jumlah);
+		print_r($nama);
+		print_r($jumlah);
+		if ($q) {
+			echo "string";
+		}else {
+			echo "sad";
+		}
+	}
 
 }

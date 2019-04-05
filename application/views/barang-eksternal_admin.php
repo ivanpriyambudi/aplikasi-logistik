@@ -170,7 +170,7 @@
             <div class="side-nav-wrapper">
                 <div class="sidebar-profile">
                     <div class="sidebar-profile-image">
-                        <img src="<?php echo base_url('assets'); ?>/images/profile-image.png" class="circle" alt="">
+                        <img src="assets/images/profile-image.png" class="circle" alt="">
                     </div>
                     <div class="sidebar-profile-info">
                         <a href="javascript:void(0);" class="account-settings-link">
@@ -359,7 +359,7 @@
             </div>
             <div class="footer-r white">&nbsp;</div>
             <div class="footer-grid-r white">
-                <a class="footer-text" href="<?php echo base_url('admin/eksternal_semua'); ?>">
+                <a class="footer-text" href="eksternal-semua.html">
                     <i class="material-icons arrow-r">arrow_forward</i>
                     <br>
                     <div>
