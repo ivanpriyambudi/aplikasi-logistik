@@ -188,7 +188,7 @@
                         </li>
                         <li class="divider"></li>
                         <li class="no-padding">
-                            <a class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
+                            <a href = "<?php echo base_url('admin/logout'); ?>" class="waves-effect waves-grey"><i class="material-icons">exit_to_app</i>Sign Out</a>
                         </li>
                     </ul>
                 </div>
