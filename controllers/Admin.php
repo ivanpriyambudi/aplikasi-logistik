@@ -58,15 +58,11 @@ class Admin extends CI_Controller {
 	}
 
 
-	function inventaris_admin(){
-		 $this->load->view('inventaris_admin');
-	}
+	
 	function inventaris_detail(){
 		 $this->load->view('inventaris-detail_admin');
 	}
-	function inventaris_semua(){
-		 $this->load->view('inventaris-semua_admin');
-	}
+	
 
 	function barang_eksternal_admin(){
 		 $this->load->view('barang-eksternal_admin');
@@ -84,6 +80,12 @@ class Admin extends CI_Controller {
 
 	function pengadaan_barang_data_admin(){
 		 $this->load->view('pengadaan-barang-data_admin');
+		 function inventaris_semua(){
+		 $this->load->view('inventaris-semua_admin');
+	}
+	}
+	function inventaris_admin(){
+		 $this->load->view('inventaris_admin');
 	}
 
 	function request_admin(){
